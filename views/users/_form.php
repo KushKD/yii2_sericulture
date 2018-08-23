@@ -18,6 +18,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email_id')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password_salt')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'authKey')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'aadhaar_number')->textInput() ?>
 
     <?= $form->field($model, 'is_department_user')->dropDownList([ 'Y' => 'Y', 'N' => 'N', ], ['prompt' => '']) ?>

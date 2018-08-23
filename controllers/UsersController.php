@@ -65,6 +65,9 @@ class UsersController extends Controller
     public function actionCreate()
     {
         $model = new Users();
+// $model->load(Yii::$app->request->post());
+// $model->created_date_time=date("Y-m-d h:i:s");
+//         echo "<pre>";print_r($model); print_r($_POST); die;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->user_id]);

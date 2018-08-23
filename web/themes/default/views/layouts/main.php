@@ -208,7 +208,23 @@
                                  </li>
                               </ul>
                            </li>
-                           <li><a href='http://sericulturecouncil.com/contact-us.php'><span>Contact Us</span></a></li>
+                           <li><a href='<?=Yii::$app->urlManager->createUrl("site/contact")?>'><span>Contact Us</span></a></li>
+                            <li><a href='<?=Yii::$app->urlManager->createUrl("users")?>'><span>User Management</span></a></li>
+
+
+                           <?php 
+                              if(Yii::$app->user->isGuest)
+                                 echo '<li class="pull-right">
+                                          <a href="'.Yii::$app->urlManager->createUrl("site/login").'"><span>Login</span></a>
+                                       </li>';
+                              else 
+                                 echo '<li class="pull-right">
+                                          <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
+                                             <span>Logout('.Yii::$app->user->identity->username.')</span>
+                                          </a>
+                                       </li>';
+                           ?>
+
                         </ul>
                      </div>
                   </div>
@@ -279,7 +295,7 @@
          <?= $content ?> 
       </div>
       <footer>
-         <div class="section-footer">
+         <div class="section-footer  container">
             <div class="col-md-12 col-sm-12 col-xs-12">
                <span>
                <img src="http://hitwebcounter.com/counter/counter.php?page=6207844&style=0006&nbdigits=5&type=ip&initCount=500000" title="good hits" Alt="good hits"   border="0" style="margin:auto;" class="center-block">
