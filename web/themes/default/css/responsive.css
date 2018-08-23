@@ -1,0 +1,261 @@
+/*============================================
+                table category
+==============================================*/
+
+@media only screen and (max-width: 800px) {
+#no-more-tables table, #no-more-tables thead, #no-more-tables tbody, #no-more-tables th, #no-more-tables td, #no-more-tables tr { 
+    display: block; 
+    border: none;
+}
+.page-table .tbody-inverse td {
+    padding: 10px;
+}
+.page-table .th-hide{
+   	display:block !important;
+}
+#no-more-tables .th-hide td:before { 
+    border-right: 0px solid #009999 !important; 
+}
+
+#no-more-tables thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+#no-more-tables tr { 
+    border: 1px solid #009999; 
+}
+#no-more-tables td { 
+    border: none;
+    border-bottom: 1px solid #009999; 
+    position: relative;
+    padding-left: 50%; 
+    white-space: normal;
+    text-align:left;
+}
+#no-more-tables td:before { 
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+/*    white-space: nowrap;*/
+    text-align:left;
+    font-weight: bold;
+    border-right: 1px solid #009999; 
+}
+#no-more-tables td:before { 
+    content: attr(data-title); 
+}
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 980px) {
+    
+.latest-con .latest-title {
+    width: 100%;
+}
+.latest-con .latest-title h3 {
+    text-align: center;
+}
+.latest-con .latest-title i {
+    display: none;
+}
+.latest-con .latest-marquee {
+    width: 100%;
+}
+.top-bar .top-social {
+    text-align: center;
+    padding: 10px 0px;
+}
+.top-bar .top-touch {
+    padding: 10px 0px;
+}
+.top-bar .top-touch h4 {
+    line-height: 20px;
+}
+.top-bar .top-opt {
+    padding: 10px 0px;
+}
+.top-logo-section .logo-slogan h1 {
+    line-height: 30px;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.top-logo-section .logo {
+    float: none;
+}
+.top-logo-section .logo-right {
+    float: none;
+    padding-top: 10px;
+}
+
+.section-footer {
+    line-height: 15px;
+}
+.section-footer .copy {
+    padding: 10px 0px;
+    border-bottom: 2px solid #fff;
+}
+.section-footer .copy-right {
+    padding: 10px 0px;
+}
+
+.dg-container nav{
+    display: none;
+}
+ 
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+.popup {
+    position: absolute !important;
+    /*    top: 0% !important;*/
+    left: 2% !important;
+    width: 95% !important;
+    height: auto;
+}
+.popuplog {
+    position: fixed;
+    top: 40%;
+    left: 2%;
+    height: auto;
+    width: 95%;
+}
+.popupgot {
+    position: fixed;
+    top: 40%;
+    left: 2%;
+    height: auto;
+    width: 95%;
+}
+
+}
+
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #cssmenu {
+    background-color: #009999;
+  }
+  #cssmenu > ul {
+    display: none;
+  }
+  #cssmenu > ul.open {
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #cssmenu.align-right > ul {
+    float: none;
+  }
+  #cssmenu.align-center > ul {
+    text-align: left;
+  }
+  #cssmenu > ul > li,
+  #cssmenu.align-right > ul > li {
+    float: none;
+    display: block;
+  }
+  #cssmenu > ul > li > a {
+    padding: 18px 25px 18px 25px;
+    border-right: 0;
+    font-weight: bold;
+  }
+  #cssmenu > ul > li:hover > a,
+  #cssmenu > ul > li.active > a {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  #cssmenu #menu-button {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    padding: 18px 25px 18px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #cssmenu ul ul {
+    top: 0px !important;
+}
+  #cssmenu ul ul,
+  #cssmenu ul li:hover > ul,
+  #cssmenu > ul > li > ul,
+  #cssmenu ul ul ul,
+  #cssmenu ul ul li:hover > ul,
+  #cssmenu.align-right ul ul,
+  #cssmenu.align-right ul li:hover > ul,
+  #cssmenu.align-right > ul > li > ul,
+  #cssmenu.align-right ul ul ul,
+  #cssmenu.align-right ul ul li:hover > ul {
+    left: 0;
+    right: auto;
+    top: auto;
+    opacity: 1;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+  }
+  #cssmenu ul ul li {
+    width: 100%;
+  }
+  #cssmenu ul ul li a {
+    width: 100%;
+    box-shadow: none;
+    padding-left: 40px;
+  }
+  #cssmenu ul ul ul li a {
+    padding-left: 75px;
+  }
+  #cssmenu ul ul li:first-child > a,
+  #cssmenu ul ul li:last-child > a {
+    border-radius: 0;
+  }
+  #cssmenu #menu-button::after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 7px;
+    width: 22px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    right: 25px;
+    top: 18px;
+  }
+  #cssmenu #menu-button::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #fff;
+    right: 25px;
+    top: 28px;
+  }
+  #cssmenu > ul > li.has-sub > a::after,
+  #cssmenu ul ul li.has-sub > a::after {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1200px) {
+
+.top-logo-section .logo-slogan h1 {
+    font-size: 32px;
+    padding-right: 0px;
+}
+.latest-con .latest-title i {
+    display: none;
+}
+.contant-left-section .contant-left-section-dis ul li {
+    font-weight: normal;
+    font-size: 11px;
+}
+.contant-right-section .contant-right-slider {
+    padding: 40px 0px;
+}
+
+}
