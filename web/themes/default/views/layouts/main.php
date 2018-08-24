@@ -223,7 +223,7 @@
                            }else{
                                 echo '<li class="pull-right">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
-                                             <span>Logout('.$session["username"].')</span>
+                                             <span>Logout &nbsp; ('.$session["username"].')</span>
                                           </a>
                                        </li>';
 

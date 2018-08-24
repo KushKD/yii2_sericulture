@@ -162,7 +162,7 @@ public static function findByUsername($username){
     return null;*/
 
     return self::find()
-       ->select(['password', 'password_salt' ,'username' ,'user_id'])
+       ->select(['password', 'password_salt' ,'username' ,'user_id' ,'full_name'])
        ->where(['username' => $username])
        ->one();
 }

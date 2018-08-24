@@ -102,7 +102,7 @@ class LoginForm extends Model
              if($data['password'] == $this->password && $data['username'] == $this->username){
 
                  //Set Data To Session
-                $session->set('username', $data['username']);
+                $session->set('username', $data['full_name']);
                 $session->set('userid', $data['user_id']);
 
                 return true;
