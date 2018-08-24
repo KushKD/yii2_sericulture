@@ -72,13 +72,11 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        if (!Yii::$app->session) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-           // print_r($model->load(Yii::$app->request->post())); die;
             return $this->goHome();
         }
 
@@ -95,7 +93,12 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+    // echo "<pre>"; print_r(Yii::$app->session); die("Asdas");
+       // Yii::$app->user->logout();
+
+  $model = new LoginForm(); 
+        $model->logout(); 
+
 
         return $this->goHome();
     }

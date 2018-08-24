@@ -213,7 +213,23 @@
 
 
                            <?php 
-                              if(Yii::$app->user->isGuest)
+                              $session = $_SESSION['user_id'];
+                               echo "<pre>"; print_r($_SESSION);
+                           if(empty($session)){
+
+                                  echo '<li class="pull-right">
+                                          <a href="'.Yii::$app->urlManager->createUrl("site/login").'"><span>Login</span></a>
+                                       </li>';
+                           }else{
+                                echo '<li class="pull-right">
+                                          <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
+                                             <span>Logout('.$_SESSION["username"].')</span>
+                                          </a>
+                                       </li>';
+
+                           }
+
+                            /*  if(Yii::$app->user->isGuest)
                                  echo '<li class="pull-right">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/login").'"><span>Login</span></a>
                                        </li>';
@@ -222,7 +238,7 @@
                                           <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
                                              <span>Logout('.Yii::$app->user->identity->username.')</span>
                                           </a>
-                                       </li>';
+                                       </li>';*/
                            ?>
 
                         </ul>

@@ -80,6 +80,9 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         ];
     }
 
+
+
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -135,28 +138,33 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        foreach (self::$users as $user) {
+       /* foreach (self::$users as $user) {
             if ($user['accessToken'] === $token) {
                 return new static($user);
             }
         }
 
-        return null;
+        return null;*/
     // }
 
-    // throw new \yii\base\NotSupportedException();
+     throw new \yii\base\NotSupportedException();
 }
 
 public static function findByUsername($username){
 
-        // return self::findOne(['username' => $username]);
-    foreach (self::$users as $user) {
+       // return self::findOne(['username' => $username]);
+   /* foreach (self::$users as $user) {
         if (strcasecmp($user['username'], $username) === 0) {
             return new static($user);
         }
     }
 
-    return null;
+    return null;*/
+
+    return self::find()
+       ->select(['password', 'password_salt' ,'username' ,'user_id'])
+       ->where(['username' => $username])
+       ->one();
 }
 
 
