@@ -132,13 +132,13 @@ class LoginForm extends Model
 
 
       public function logout(){
-
+  // echo "Im here";   die;
  $session = Yii::$app->session; 
         //clear session
          if ($session->isActive){
-             echo "<pre>".$session->isActive; 
-              echo "Im here";   die;
-               $session->set('userid', "");
+             //echo "<pre>".$session->isActive; 
+              //echo "Im here";   die;
+               $session->destroy();
 
         }
 

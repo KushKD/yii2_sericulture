@@ -213,17 +213,17 @@
 
 
                            <?php 
-                              $session = $_SESSION['user_id'];
-                               echo "<pre>"; print_r($_SESSION);
-                           if(empty($session)){
-
+                             // $session = $_SESSION['user_id'];
+                           $session = Yii::$app->session;
+                              // echo "<pre>"; print_r($session['username']);die;
+                           if(!isset($session['username']) || empty($session['username'])){
                                   echo '<li class="pull-right">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/login").'"><span>Login</span></a>
                                        </li>';
                            }else{
                                 echo '<li class="pull-right">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
-                                             <span>Logout('.$_SESSION["username"].')</span>
+                                             <span>Logout('.$session["username"].')</span>
                                           </a>
                                        </li>';
 

@@ -21,21 +21,21 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['Contact'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['Contact'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['*'],
                     ],
                 ],
             ],
-            'verbs' => [
+           /* 'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'index' => ['post'],
                 ],
-            ],
+            ],*/
         ];
     }
 
@@ -95,8 +95,8 @@ class SiteController extends Controller
     {
     // echo "<pre>"; print_r(Yii::$app->session); die("Asdas");
        // Yii::$app->user->logout();
-
-  $model = new LoginForm(); 
+        // die("yahna");
+        $model = new LoginForm(); 
         $model->logout(); 
 
 
