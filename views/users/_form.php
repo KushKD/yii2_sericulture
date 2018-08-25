@@ -12,24 +12,50 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'full_name')->textInput(['maxlength' => true]) ?>
+    <div class="container" >
+    <div class="row">
+      
 
-    <?= $form->field($model, 'mobile_number')->textInput() ?>
+      
 
-    <?= $form->field($model, 'email_id')->textInput(['maxlength' => true]) ?>
+      <div class="col-lg-6 col-lg-offset-3">
+      <?= $form->field($model, 'is_department_user')->radioList([ 'Y' => 'Yes', 'N' => 'No', ], 
+      ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+      <?= $form->field($model, 'username')->textInput(['maxlength' => true,'id' => 'uname']) ?>
+      <?= $form->field($model, 'full_name')->textInput(['maxlength' => true, 'id' => 'fname']) ?>
+      <?= $form->field($model, 'mobile_number')->textInput(['id' => 'mnumber']) ?>
+      <?= $form->field($model, 'email_id')->textInput(['maxlength' => true, 'id' => 'email']) ?>
+      <?= $form->field($model, 'aadhaar_number')->textInput(['id' => 'aadhaar']) ?>
+      <?= $form->field($model, 'password')->passwordInput(['maxlength' => true,'id' => 'password']) ?>
+      </div>
+    </div>
+    </div>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+
+<script>
+    function showData(){
+        var username = document.getElementById('uname').value;
+        alert(username);
+    }
+</script>
+   
+
+    
+
+   
+
+   
+
+   
 
     <!-- <?= $form->field($model, 'password_salt')->textInput(['maxlength' => true]) ?>  -->
 
     <!-- <?= $form->field($model, 'authKey')->textInput(['maxlength' => true]) ?>    -->
 
-    <?= $form->field($model, 'aadhaar_number')->textInput() ?>
+  
 
-    <?= $form->field($model, 'is_department_user')->dropDownList([ 'Y' => 'Y', 'N' => 'N', ], ['prompt' => '']) ?>
-
+   
     <!-- <?= $form->field($model, 'created_date_time')->textInput() ?> -->
 
     <!-- <?= $form->field($model, 'updated_date_time')->textInput() ?>  -->
@@ -41,7 +67,7 @@ use yii\widgets\ActiveForm;
     <!-- <?= $form->field($model, 'is_active')->dropDownList([ 'Y' => 'Y', 'N' => 'N', ], ['prompt' => '']) ?> -->
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success','onclick' => 'showData();',]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
