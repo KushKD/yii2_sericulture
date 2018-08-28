@@ -26,10 +26,11 @@ class DefaultAppAsset extends AppAsset {
 			
 			
 			 'themes/default/js/jquery-1.9.1.min.js',
-			  'themes/default/js/jquery-ui.js',
-			   'themes/default/js/script.js',
+                          'themes/default/js/jquery-ui.js',
+                          'themes/default/js/customCAFvalidation.js',
 			    'themes/default/js/3d-slider.js',
-			     'themes/default/js/modernizr.custom.53451.js',
+                             'themes/default/js/modernizr.custom.53451.js',
+                            
 
 
 
