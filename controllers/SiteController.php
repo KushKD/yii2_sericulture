@@ -72,18 +72,26 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->session) {
-            return $this->goHome();
-        }
+         if (!Yii::$app->session) {
+             return $this->goHome();
+         }
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goHome();
-        }
+        }else{
+           
+            $model->password = '';
+            return $this->render('login', ['model' => $model,]);
 
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        }
+      //  echo print_r(Yii::$app->session);
+       // echo("Go Away"); die;
+        //  Yii::app()->model->setFlash('You have been successfully logged out');
+       // Yii::$app->session->setFlash('myMessage', 'Article has been Created Successfully');
+         // $model->password = '';
+         // return $this->render('login', ['model' => $model,]);
+
+       
     }
 
     /**

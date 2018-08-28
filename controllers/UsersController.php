@@ -88,6 +88,7 @@ class UsersController extends Controller
               $model->user_agent = $_SERVER['HTTP_USER_AGENT'] ;//$browserAgent["name"];
 
               $model->password_salt = $this->get_generated_password_salt($model->password, $model->email_id );
+              $model->password = hash_hmac("sha1", $model->password, $model->password_salt);
 
            
 
@@ -264,9 +265,9 @@ class UsersController extends Controller
 
         $password_salt_key_generated =hash_hmac("sha1", time().$email, PASSWORD_SALT_KEY);
 
-        $password_salt = hash_hmac("sha1", $password, $password_salt_key_generated);
+         //hash_hmac("sha1", $password, $password_salt_key_generated);
 
-        return  $password_salt;
+        return  $password_salt_key_generated;
 
       //  echo "<pre>"; print_r($password); print_r($email); print_r($password_salt); die;
 

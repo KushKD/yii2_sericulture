@@ -64,7 +64,7 @@ class LoginForm extends Model
      */
     public function login()
     {
-        if ($this->validate()) {
+      //  if ($this->validate()) {
 
            
            $session = Yii::$app->session; 
@@ -86,10 +86,9 @@ class LoginForm extends Model
                 
 
           $data = $userData->findByUsername($this->username);
-
-          if(empty($data)){
-                 return false;
-          }else{
+          
+        // echo "<pre>"; print_r($data); die;
+          if(!empty($data)){
             /* echo "<pre>"; print_r($data); 
               echo "<pre>"; print_r($data['username']); 
               echo "<pre>"; print_r($data[0]['password']); 
@@ -99,20 +98,29 @@ class LoginForm extends Model
              die;*/
              //Compare the Passwords username and ActiveFlag
 
-             if($data['password'] == $this->password && $data['username'] == $this->username){
+             //Convert this->password to Hash
+             $password_hash = $this->convert_password_to_hash($this->password, $data['password_salt']);
+            //  echo($data['password']."<br>");
+            //  echo($password_hash); die;
+
+             if($data['password'] == $password_hash && $data['username'] == $this->username){
 
                  //Set Data To Session
                 $session->set('username', $data['full_name']);
                 $session->set('userid', $data['user_id']);
 
                 return true;
-             } 
+             } else{
+                Yii::$app->session->setFlash('failure', "incorrect  password");
+                return false;
+             }
             
           }
  
 
            // return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
-        }
+       // }
+       Yii::$app->session->setFlash('failure', "incorrect username or password");
         return false;
     }
 
@@ -141,6 +149,21 @@ class LoginForm extends Model
                $session->destroy();
 
         }
+
+      }
+
+
+
+      public function convert_password_to_hash($user_password, $password_salt){
+         // echo($user_password) ; 
+          //echo($password_salt);
+
+          //Convert password to hash
+         $password_check =  hash_hmac("sha1", $user_password, $password_salt);
+        // echo($password_check);
+
+         return $password_check;
+
 
       }
 }

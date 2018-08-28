@@ -45,3 +45,11 @@ $this->params['breadcrumbs'][] = $this->title;
         To modify the username/password, please check out the code <code>app\models\User::$users</code>.
     </div> -->
 </div>
+
+<?php if (Yii::$app->session->hasFlash('failure')): ?>
+            <div class="alert alert-danger alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                <h4><i class="icon fa fa-times"></i> Error!</h4>
+                <?= Yii::$app->session->getFlash('failure') ?>
+            </div>
+            <?php endif; ?>
