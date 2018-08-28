@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
       <?= $form->field($model, 'password')->passwordInput(['maxlength' => true,'id' => 'password']) ?>
 
  <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success col-lg-12 ','onclick' => 'showData();',]) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success col-lg-12 ',]) ?>
     </div>
 
       </div>
@@ -58,7 +58,7 @@ use yii\widgets\ActiveForm;
 
     //     if(username === '' && username === '')
 
-
+// ,'onclick' => 'showData();'
     //     alert(username);
     // }
 

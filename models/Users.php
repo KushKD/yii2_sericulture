@@ -26,7 +26,7 @@ use Yii;
  * @property BoUserBankDetail[] $boUserBankDetails
  * @property BoUserProfile[] $boUserProfiles
  */
-class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
+class Users extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -49,7 +49,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['full_name', 'email_id'], 'string', 'max' => 253],
             [['username'], 'string', 'max' => 100],
             [['password'], 'string', 'max' => 40],
-            [['password_salt'], 'string', 'max' => 32],
+            [['password_salt'], 'string', 'max' => 99],
             [['authKey'], 'string', 'max' => 50],
             [['remote_address'], 'string', 'max' => 250],
             [['user_agent'], 'string', 'max' => 255],
@@ -80,9 +80,6 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         ];
     }
 
-
-
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -99,7 +96,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->hasMany(BoUserProfile::className(), ['user_id' => 'user_id']);
     }
 
-        /**
+       /**
      * {@inheritdoc}
      */
     public function getId()
