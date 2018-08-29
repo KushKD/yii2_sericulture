@@ -111,7 +111,7 @@ class LoginForm extends Model
 
                 return true;
              } else{
-                Yii::$app->session->setFlash('failure', "incorrect  password");
+                Yii::$app->session->setFlash('info', "incorrect  password");
                 return false;
              }
             
@@ -120,7 +120,7 @@ class LoginForm extends Model
 
            // return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
        // }
-       Yii::$app->session->setFlash('failure', "incorrect username or password");
+       Yii::$app->session->setFlash('danger', "incorrect username or password");
         return false;
     }
 
