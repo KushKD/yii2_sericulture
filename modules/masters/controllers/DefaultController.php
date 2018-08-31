@@ -1,6 +1,8 @@
 <?php
+
 namespace app\modules\masters\controllers;
 use yii\web\Controller;
+use app\models\District;
 /**
  * Default controller for the `frontend` module
  */
@@ -12,7 +14,8 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $distt=District::find()->where(["is_active"=>"Y"])->all(); 
+        return $this->render('index',["distt"=>$distt]);
     }
     public function actionTest()
     {
