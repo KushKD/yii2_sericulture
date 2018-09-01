@@ -100,10 +100,10 @@ if (true) {
 		html += "<td style='width:15%'><input class=' form-control' readonly type='text' id='coocon_year_' /></td>";
 		html += "<td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' /></td>";
 	//	html += "<td class='text-center' style='width:5%; background-color: darkcyan ; color:white' >></td>";
-		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' type='text' id='green_coocon_harvested_' /></td> ";
+		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);'  readonly type='text' id='green_coocon_harvested_' /></td> ";
 	//	html += "<td class='text-center' style='width:5% ; background-color: grey ; color:white' ><=</td> ";
-		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' type='text' id='rate_spring_crop_' /></td> ";
-    html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' type='text' id='amount_realized_' /></td> ";
+		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='rate_spring_crop_' /></td> ";
+    html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='amount_realized_' /></td> ";
 
 
 		html += "<td style='width:10%'><a onclick='deleteRow(this)' id='delPOIbutton' class='btn btn-info'> Remove </a></td> ";
@@ -207,9 +207,7 @@ countClicks--;
         </ul>
       </div>
 
-
-
-
+  <form method="POST" action="<?=Yii::$app->urlManager->createUrl('frontend')?>">
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
@@ -226,12 +224,12 @@ countClicks--;
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Age</label>
-                  <input class="form-control" type="text" id="age" >
+                  <input class="form-control" type="text" id="age" name="UserProfile[user_age]" >
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">Annual Income</label>
-                  <input class="form-control" type="text" id="annual_income" >
+                  <input class="form-control" type="text" id="annual_income" name="UserProfile[user_annual_income]" >
                 </div>
 
                 </div>
@@ -241,7 +239,7 @@ countClicks--;
                 <div class="row">
                 <div class="form-group col-lg-4">
                     <label for="exampleSelect1">Gender</label>
-                    <select class="form-control" id="gender">
+                    <select class="form-control" id="gender" name="UserProfile[user_gender]">
                       <option value="M" >Male</option>
                       <option value="F" >Female</option>
                       <option value="O" >Other</option>
@@ -251,7 +249,7 @@ countClicks--;
 
                    <div class="form-group col-lg-4">
                     <label for="exampleSelect1">Caste</label>
-                    <select class="form-control" id="caste">
+                    <select class="form-control" id="caste" name="UserProfile[user_caste]">
                       <option value="GEN" >General</option>
                       <option value="SC" >SC</option>
                       <option value="ST" >ST</option>
@@ -262,7 +260,7 @@ countClicks--;
                   
                   <div class="form-group col-lg-4">
                     <label for="exampleSelect1">Education Qualification</label>
-                    <select class="form-control" id="education_qualification">
+                    <select class="form-control" id="education_qualification" name="UserProfile[user_education_qualification]">
                       <option value="MET" >Matriculation</option>
                       <option value="HSE" >Senior Secondary</option>
                       <option value="GRAD" >Graduation</option>
@@ -281,12 +279,12 @@ countClicks--;
                  <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label"> Occupation</label>
-                  <input class="form-control" type="text" id="occupation">
+                  <input class="form-control" type="text" id="occupation" name="UserProfile[user_occupation]">
                 </div>
 
                 <div class="form-group col-lg-4">
                     <label for="district">District</label>
-                    <select class="form-control" id="district" name="" onchange="getTehsil(this.value);">
+                    <select class="form-control" id="district" name="UserProfile[user_district_id]" onchange="getTehsil(this.value);">
                       <option value="" >Select District</option>
                       <?php
                        if(!empty($distt))
@@ -303,7 +301,7 @@ countClicks--;
                
                 <div class="form-group col-lg-4">
                     <label for="tehsil">Tehsil</label>
-                    <select class="form-control" id="tehsil" onchange="getVillages(this.value);">
+                    <select class="form-control" id="tehsil" name="UserProfile[user_tehsil_id]" onchange="getVillages(this.value);">
                       <option value="" >Select Tehsil</option>
                      
                     </select>
@@ -318,7 +316,7 @@ countClicks--;
                    <div class="row">
                    <div class="form-group col-lg-4">
                     <label for="village">Village</label>
-                    <select class="form-control" id="village">
+                    <select class="form-control" name="UserProfile[user_village_id]" id="village">
                       <option value="" >Select Village</option>
                      
                     </select>
@@ -327,7 +325,7 @@ countClicks--;
 
                 <div class="form-group col-lg-4">
                     <label for="po">Post Office</label>
-                    <select class="form-control" id="p0st_office">
+                    <select class="form-control" id="post_office"  name="UserProfile[user_po]">
                       <option value="" >Select Post Office</option>
                      
                     </select>
@@ -336,7 +334,7 @@ countClicks--;
                
                   <div class="form-group col-md-4">
                   <label class="control-label"> Pin Code</label>
-                  <input class="form-control" type="text" id="pin_code">
+                  <input class="form-control" type="text" id="pin_code" name="UserProfile[user_pin_code]">
                 </div>
 
                </div>
@@ -347,7 +345,7 @@ countClicks--;
                 <div class="row">
                <div class="form-group col-md-4">
                     <label for="address">Address</label>
-                    <textarea class="form-control" id="address" rows="3"></textarea>
+                    <textarea class="form-control" id="address" rows="3" name="UserProfile[address]"></textarea>
                   </div>
                   </div>       
           <!-- Row  Five Starts Here -->
@@ -795,6 +793,7 @@ countClicks--;
        </div>
       <?php $this->endBody() ?>
    </body>
+   <input type="submit" class="btn btn-primary">
 </html>
 <?php $this->endPage() ?>
 
