@@ -22,6 +22,51 @@
     var countClicks = 0;
 
 
+//Get Tehsil Function
+function getTehsil(districtId){
+   $("#tehsil").empty();
+   // var distt=$(".distt_id").val();
+    var postData={"distt_id":districtId};  
+    var url="<?=Yii::$app->urlManager->createUrl('frontend/common-api/tehsil')?>";
+    var promise=makeAjaxCall(url,postData);
+    console.log(promise);
+    var html = "<option value=''>---Please Select---</option>";
+    promise.success(function (data) {
+      if(data!=''){
+        if(data.STATUS==200){
+          console.log("This is where I am"+data.response);
+          $.each(data.response, function(key,val){
+              html += "<option value='"+val.tehsil_id+"'>"+val.tehsil_name+"</option>";
+          });
+          $("#tehsil").append(html);
+        }
+        return false;
+      }
+    });
+}
+
+//Get Village Function
+function getVillages(teh_id){
+    $("#village").empty();
+    var postData={"teh_id":teh_id};
+    var url="<?=Yii::$app->urlManager->createUrl('frontend/common-api/village')?>";
+    var promise=makeAjaxCall(url,postData);
+    var html = "<option value=''>---Please Select---</option>";
+    promise.success(function (data) {
+      if(data!=''){
+        if(data.STATUS==200){
+          $.each(data.response, function(key,val){
+              html += "<option value='"+val.vill_id+"'>"+val.vill_name +"</option>";
+          });
+          $("#village").append(html);
+        }
+        return false;
+      }
+    });
+  }
+
+
+ function makeAjaxCall(a,e){return jQuery.ajax({url:a,data:e,dataType:"json",type:"POST",success:function(a){},error:function(a){}})}function sumLandCost(a,e){if(!checkLandUnitsAreSame())return $(".landAreaHelp").empty(),$(".landAreaHelp").html("Please Select Same Units in all the blocks of land detail."),!1;var n=0;$(".land_area").each(function(){n+=parseFloat(this.value)});var t=$(".landUnit").val();n=convertValueIntoBigha(n,t),land_rate=$("."+a).val(),n*=land_rate,$("."+e).val(n)}function checkLandUnitsAreSame(){var a=1,e="",n="",t=!0;return $(".landUnit").each(function(){e=this.value,a>1&&e!=n&&(t=!1),a++,n=e}),!!t}function checkLandAreaValidation(){}function checkLandUnit(){var a=$(".landUnit").val();$(".land_area").attr("readonly",!1),$(".helpGroup").empty(),"Bigha/Biswa/Biswansi"==a&&$(".helpGroup").html("<p>Value in 000-000-000</p>")}function convertValueIntoBigha(a,e){var n=1;switch(e){case"Kanal/Marla":n=.30939*a;break;case"Acre":n=.0616*a;break;case"Sq. Meter":n=616e-6*a;break;case"Hectare":n=6.1772*a;break;case"Bigha/Biswa/Biswansi":n=1*a}return n}
 
 
 
@@ -241,7 +286,7 @@ countClicks--;
 
                 <div class="form-group col-lg-4">
                     <label for="district">District</label>
-                    <select class="form-control" id="district" name="">
+                    <select class="form-control" id="district" name="" onchange="getTehsil(this.value);">
                       <option value="" >Select District</option>
                       <?php
                        if(!empty($distt))
@@ -258,7 +303,7 @@ countClicks--;
                
                 <div class="form-group col-lg-4">
                     <label for="tehsil">Tehsil</label>
-                    <select class="form-control" id="tehsil">
+                    <select class="form-control" id="tehsil" onchange="getVillages(this.value);">
                       <option value="" >Select Tehsil</option>
                      
                     </select>
