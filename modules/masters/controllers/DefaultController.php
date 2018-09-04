@@ -55,14 +55,27 @@ class DefaultController extends Controller
            // echo "<pre>";print_r($postArray); die;
            //  echo "<pre>";print_r($postArray['UserBankDetail']); die;
 
-            if(isset($postArray['UserProfile'],$postArray['UserBankDetail'])){
+            if(isset($postArray['UserProfile'],$postArray['UserBankDetail'],$postArray['app_submission'])){
+
+                //Save User Profile
                 $userProfile->attributes=Yii::$app->request->post('UserProfile');
+
+                //Save Bank Details
                 $bankDetails->attributes= Yii::$app->request->post('UserBankDetail');
 
+               
+                //Save application Data in Json
+                $applicationData = Yii::$app->request->post('app_submission');
+                //echo "<pre>";print_r($applicationData); 
+                //Convert the Application Data to JSON
+                $application_data_json = json_encode($applicationData);  
+               
+
               //  echo "<pre>";print_r(Yii::$app->request->post());
-            //   echo "<pre>";print_r($userProfile);  die;
+             //  echo "<pre>";print_r($userProfile);  
                // echo "<br>"; 
-              //  echo "<pre>";print_r($userDetails);die;
+                //echo "<pre>";print_r($userDetails);
+                //echo "<pre>";print_r(Yii::$app->request->post('app_submission')); die;
                 // if($userProfile->save())
                 
                 // echo "<pre>";print_r($userProfile);die;

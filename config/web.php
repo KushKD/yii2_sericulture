@@ -70,15 +70,15 @@ $config = [
              'enablePrettyUrl' => true,
              'showScriptName' => false,
              'rules' => array(
-                'mycategory/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+               // 'mycategory/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+               // '<controller:\w+>/<id:\d+>' => '<controller>/view',
+               // '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+               // '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 //Rules with Server Names
                 //'http://admin.domain.com/login' => 'admin/user/login',
                 //'http://www.domain.com/login' => 'site/login',
                 //'http://<country:\w+>.domain.com/profile' => 'user/view',
-                '<controller:\w+>/<id:\d+>-<slug:[A-Za-z0-9 -_.]+>' => '<controller>/view',
+                //'<controller:\w+>/<id:\d+>-<slug:[A-Za-z0-9 -_.]+>' => '<controller>/view',
                 ),
             /* 'rules' => [
              ],*/

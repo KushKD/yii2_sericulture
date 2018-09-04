@@ -97,13 +97,13 @@ if (true) {
 		html += "</thead>";
 		html += "<tr>";
 		html += "<td class='text-center' style='width:5%'>1</td> ";
-		html += "<td style='width:15%'><input class=' form-control' readonly type='text' id='coocon_year_' /></td>";
-		html += "<td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' /></td>";
+		html += "<td style='width:15%'><input class=' form-control' readonly type='text' id='coocon_year_' name='app_submission[coocon_year][]' /></td>";
+		html += "<td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' name='app_submission[coocon_seed_quantity][]'/></td>";
 	//	html += "<td class='text-center' style='width:5%; background-color: darkcyan ; color:white' >></td>";
-		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);'  readonly type='text' id='green_coocon_harvested_' /></td> ";
+		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);'  readonly type='text' id='green_coocon_harvested_' name='app_submission[green_coocon_harvested][]'/></td> ";
 	//	html += "<td class='text-center' style='width:5% ; background-color: grey ; color:white' ><=</td> ";
-		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='rate_spring_crop_' /></td> ";
-    html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='amount_realized_' /></td> ";
+		html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='rate_spring_crop_' name='app_submission[rate_spring_crop][]' /></td> ";
+    html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='amount_realized_' name='app_submission[amount_realized][]'/></td> ";
 
 
 		html += "<td style='width:10%'><a onclick='deleteRow(this)' id='delPOIbutton' class='btn btn-info'> Remove </a></td> ";
@@ -432,16 +432,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Total Land (In Acers)</label>
-                  <input class="form-control" type="text" id="total_land" >
+                  <input class="form-control" type="text" id="total_land" name="app_submission[Land_status_total_land]" >
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-4" >
                   <label class="control-label">Irrigated Land (In Acers)</label>
-                  <input class="form-control" type="text" id="irrigated_land" >
+                  <input class="form-control" type="text" id="irrigated_land" name="app_submission[Land_status_irrigated_land]" >
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">Rain Fed (In Acers)</label>
-                  <input class="form-control" type="text" id="rain_fed" >
+                  <input class="form-control" type="text" id="rain_fed"  name="app_submission[Land_status_rain_fed]">
                 </div>
 
                 </div>
@@ -451,7 +451,7 @@ countClicks--;
                     <div class="row">
                       <div class="form-group col-md-4">
                       <label class="control-label">Land available for Mulberry Plantation (In Acers) </label>
-                      <input class="form-control" type="text" id="mulberry_land" >
+                      <input class="form-control" type="text" id="mulberry_land"  name="app_submission[Land_status_mulberry_land]">
                       </div>
 
 
@@ -482,16 +482,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">1-3 Years</label>
-                  <input class="form-control" type="text" id="one_to_three" >
+                  <input class="form-control" type="text" id="one_to_three"  name="app_submission[mulberry_plantation_one_to_three]">
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">3-5 Years</label>
-                  <input class="form-control" type="text" id="three_to_five" >
+                  <input class="form-control" type="text" id="three_to_five" name="app_submission[mulberry_plantation_three_to_five]" >
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">5-10 Years</label>
-                  <input class="form-control" type="text" id="five_to_ten" >
+                  <input class="form-control" type="text" id="five_to_ten"  name="app_submission[mulberry_plantation_five_to_ten_three_to_five]">
                 </div>
 
                 </div>
@@ -501,12 +501,12 @@ countClicks--;
                     <div class="row">
                       <div class="form-group col-md-4">
                       <label class="control-label">More than 10 years</label>
-                      <input class="form-control" type="text" id="more_than_ten" >
+                      <input class="form-control" type="text" id="more_than_ten" name="app_submission[mulberry_plantation_more_than_ten]">
                       </div>
 
                        <div class="form-group col-md-4">
                       <label class="control-label">Total Number</label>
-                      <input class="form-control" type="text" id="total_number" >
+                      <input class="form-control" type="text" id="total_number" name="app_submission[mulberry_plantation_total_number]" >
                       </div>
 
 
@@ -538,16 +538,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Rearing House (Dwelling/Seperate)</label>
-                  <input class="form-control" type="text" id="rearing_house" >
+                  <input class="form-control" type="text" id="rearing_house" name="app_submission[rearing_space_rearing_house]">
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Kacha/Pakka House/ Shed</label>
-                  <input class="form-control" type="text"  id="kacha_pakka_house" >
+                  <input class="form-control" type="text"  id="kacha_pakka_house" name="app_submission[rearing_space_kacha_pakka_house]">
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">Area Of House Shed</label>
-                  <input class="form-control" type="text" id="area_house_shed" >
+                  <input class="form-control" type="text" id="area_house_shed" name="app_submission[rearing_space_area_house_shed]">
                 </div>
 
                 </div>
@@ -665,7 +665,7 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Total Experience in silkworm rearing (Years)</label>
-                  <input class="form-control" type="text" id="silkworm_experience" >
+                  <input class="form-control" type="text" id="silkworm_experience" name="app_submission[silkworm_production_silkworm_experience]">
                 </div>
                
 
@@ -695,16 +695,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Type Of Training </label>
-                  <input class="form-control" type="text" id="training_type" >
+                  <input class="form-control" type="text" id="training_type"  name="app_submission[stp_training_type]" >
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Duration</label>
-                  <input class="form-control" type="text" id="duration" >
+                  <input class="form-control" type="text" id="duration"  name="app_submission[stp_duration]">
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">Subject</label>
-                  <input class="form-control" type="text"  id="subject" >
+                  <input class="form-control" type="text"  id="subject"  name="app_submission[stp_subject]">
                 </div>
 
                 </div>
@@ -714,12 +714,12 @@ countClicks--;
                     <div class="row">
                       <div class="form-group col-md-4">
                       <label class="control-label">Agency</label>
-                      <input class="form-control" type="text" id="agency" >
+                      <input class="form-control" type="text" id="agency"  name="app_submission[stp_agency]" >
                       </div>
 
                        <div class="form-group col-md-4">
                       <label class="control-label">Upload Certificate</label>
-                      <input class="form-control" type="file" id="upload_certificate" >
+                      <input class="form-control" type="file" id="upload_certificate"  name="app_submission[stp_upload_certificate]">
                       </div>
 
 
@@ -752,16 +752,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Male</label>
-                  <input class="form-control" type="text" id="male" >
+                  <input class="form-control" type="text" id="male"  name="app_submission[family_size_male]">
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Female</label>
-                  <input class="form-control" type="text" id="female">
+                  <input class="form-control" type="text" id="female"  name="app_submission[family_size_female]" >
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">Children</label>
-                  <input class="form-control" type="text" id="children" >
+                  <input class="form-control" type="text" id="children" name="app_submission[family_size_children]">
                 </div>
 
                 </div>
@@ -771,7 +771,7 @@ countClicks--;
                     <div class="row">
                       <div class="form-group col-md-4">
                       <label class="control-label">Family Labor Available</label>
-                      <input class="form-control" type="text" id="family_labor_availability" >
+                      <input class="form-control" type="text" id="family_labor_availability" name="app_submission[family_size_family_labor_availability]" >
                       </div>
 
                       
