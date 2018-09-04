@@ -207,7 +207,7 @@ countClicks--;
         </ul>
       </div>
 
-  <form method="POST" action="<?=Yii::$app->urlManager->createUrl('frontend')?>">
+  <form method="POST" action="<?=Yii::$app->urlManager->createUrl('frontend/default/save')?>">
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
@@ -373,16 +373,16 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Bank Name</label>
-                  <input class="form-control" type="text" id="bank_name">
+                  <input class="form-control" type="text" id="bank_name" name="bank_name">
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Account Number</label>
-                  <input class="form-control" type="text" id="account_number">
+                  <input class="form-control" type="text" id="account_number" name="UserBankDetail[account_number]">
                 </div>
 
                  <div class="form-group col-md-4">
                   <label class="control-label">IFSC Code</label>
-                  <input class="form-control" type="text" id="ifsc_code">
+                  <input class="form-control" type="text" id="ifsc_code" name="UserBankDetail[bank_ifsc_code]">
                 </div>
 
                 </div>
@@ -392,19 +392,19 @@ countClicks--;
                     <div class="row">
                       <div class="form-group col-md-4">
                       <label class="control-label">Account Holder Name </label>
-                      <input class="form-control" type="text" id="account_holder_name">
+                      <input class="form-control" type="text" id="account_holder_name" name="UserBankDetail[account_holder_name]">
                       </div>
 
 
                       <div class="form-group col-md-4">
                       <label class="control-label">Account Type </label>
-                      <input class="form-control" type="text" id="account_type">
+                      <input class="form-control" type="text" id="account_type" name="UserBankDetail[account_type]">
                       </div>
 
 
                       <div class="form-group col-md-4">
                       <label for="address">Bank Address</label>
-                      <textarea class="form-control" id="address" rows="3" id="bank_address"></textarea>
+                      <textarea class="form-control" id="address" rows="3" id="bank_address" name="UserBankDetail[bank_address]"></textarea>
                       </div>
                       </div>
                 <!-- Row Two Ends Here -->

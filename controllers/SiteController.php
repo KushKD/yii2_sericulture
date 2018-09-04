@@ -77,7 +77,8 @@ class SiteController extends Controller
          }
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goHome();
+          //  return $this->goHome();
+          return Yii::$app->response->redirect(['frontend/default/index']);
         }else{
            
             $model->password = '';

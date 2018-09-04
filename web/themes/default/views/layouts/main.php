@@ -210,18 +210,20 @@
                            </li>
                            <li><a href='<?=Yii::$app->urlManager->createUrl("site/contact")?>'><span>Contact Us</span></a></li>
                             <li><a href='<?=Yii::$app->urlManager->createUrl("users")?>'><span>User Management</span></a></li>
-
+                            <li class="pull-right btn-danger">
+                                          <a href='<?=Yii::$app->urlManager->createUrl("users/create")?>'><span >Sign Up</span></a>
+                                       </li>
 
                            <?php 
                              // $session = $_SESSION['user_id'];
                            $session = Yii::$app->session;
                               // echo "<pre>"; print_r($session['username']);die;
                            if(!isset($session['username']) || empty($session['username'])){
-                                  echo '<li class="pull-right">
+                                  echo '<li class="pull-right btn-warning">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/login").'"><span>Login</span></a>
                                        </li>';
                            }else{
-                                echo '<li class="pull-right">
+                                echo '<li class="pull-right btn-warning">
                                           <a href="'.Yii::$app->urlManager->createUrl("site/logout").'">
                                              <span>Logout &nbsp; ('.$session["username"].')</span>
                                           </a>
