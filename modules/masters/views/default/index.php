@@ -1,10 +1,11 @@
 <?php
    /* @var $this \yii\web\View */
    /* @var $content string */
-   
-  
+  //  Yii::$app->getSession()->getFlash('danger');
+  //  die;
    use yii\helpers\Html;
-   ?>
+    Yii::$app->session->getFlash('danger');
+  ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -197,6 +198,9 @@ countClicks--;
    <body>
       <?php $this->beginBody() ?>
 
+
+
+
  <div>
           <h1><i class="fa fa-dashboard"></i> Sericulture Common Application Form</h1>
           <p>Common Application Form For Seeking Assistance Support For Promotion Of Sericulture Indrustry In Himachal Pradesh</p>
@@ -373,7 +377,7 @@ countClicks--;
               <div class="row">
                 <div class="form-group col-md-4">
                   <label class="control-label">Bank Name</label>
-                  <input class="form-control" type="text" id="bank_name" name="bank_name">
+                  <input class="form-control" type="text" id="bank_name" name="UserBankDetail[bank_name]">
                 </div>
                 <div class="form-group col-md-4">
                   <label class="control-label">Account Number</label>

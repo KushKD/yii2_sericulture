@@ -1,8 +1,11 @@
 <?php
-   /* @var $this \yii\web\View */
-   /* @var $content string */
-   
+   use app\widgets\Alert;
    use yii\helpers\Html;
+   use yii\bootstrap\Nav;
+   use yii\bootstrap\NavBar;
+   use yii\widgets\Breadcrumbs;
+   use app\assets\AppAsset;
+   use app\assets\DefaultAppAsset;
    
    ?>
 <?php $this->beginPage() ?>
@@ -148,7 +151,7 @@ else{
 
 
 }
-    
+
   
     
     
@@ -199,16 +202,13 @@ else{
     </aside>
 
     <!-- Side Bar Ends -->
+   
 
      <main class="app-content">
-      <div class="app-title">
-       
-
-     
-       
+     <div class="app-title  alert-danger container-fixed">
+       <?= Alert::widget() ?></div>
+       <div class="app-title">
        <?= $content ?> 
-   
-     
       </div>
     </main>
 

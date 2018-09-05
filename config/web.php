@@ -94,7 +94,7 @@ $config = [
                 ],
             ],
 
-            'class' => 'app\components\View'
+           // 'class' => 'app\components\View'
         ],
 
        
