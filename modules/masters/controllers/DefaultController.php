@@ -21,14 +21,16 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $session = Yii::$app->session;
-        //  die("yahnaIndez");
         if(!isset($session['username']) || empty($session['username'])){
             return Yii::$app->response->redirect(['site/index']);
         }else{
-            // echo "<pre>";print_r($session->getFlash("danger"));die;
-        $distt=District::find()->where(["is_active"=>"Y"])->all(); 
-        return $this->render('index',["distt"=>$distt]);
+            $distt=District::find()->where(["is_active"=>"Y"])->all();  
+            $userProfileData = UserProfile::find()->where(["is_active"=>"Y","user_id"=>$session['userid']])->one(); 
+            $userBankDetails = UserBankDetail::find()->where(["user_id"=>$session['userid']])->one();
+            $userApplicationData = ApplicationSubmission::find()->where(["user_id"=>$session['userid']])->one();
+            return $this->render('index',["distt"=>$distt,"userProfileData"=>$userProfileData,"userBankDetails"=>$userBankDetails , "userApplicationData"=>$userApplicationData]);
         }
+        
     }
 
 
@@ -86,7 +88,7 @@ class DefaultController extends Controller
                       $transaction->commit();
                       Yii::$app->getSession()->setFlash('success', 'Data Saved Successfully.');
         
-                      return Yii::$app->response->redirect(['index']);
+                      return   $this->redirect(['index']);
 
 
                 }

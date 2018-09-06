@@ -45,12 +45,12 @@ class UserProfile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_age', 'user_gender', 'user_caste', 'user_annual_income', 'user_education_qualification', 'user_occupation', 'user_village_id', 'user_district_id', 'user_tehsil_id', 'user_pin_code', 'user_id'], 'required'],
+            [['user_age', 'user_gender', 'user_caste', 'user_annual_income', 'user_education_qualification', 'user_occupation', 'user_village_id', 'user_district_id', 'user_tehsil_id', 'user_id'], 'required'],
             [['user_age', 'user_annual_income', 'user_village_id', 'user_district_id', 'user_tehsil_id', 'user_pin_code', 'user_id'], 'integer'],
             [['user_gender', 'user_caste', 'user_education_qualification', 'is_active'], 'string'],
             [['user_occupation'], 'string', 'max' => 100],
             [['user_father_name', 'user_husband_name'], 'string', 'max' => 200],
-            [['user_po'], 'string', 'max' => 10],
+          //  [['user_po'], 'string', 'max' => 10],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['user_id' => 'user_id']],
             [['user_village_id'], 'exist', 'skipOnError' => true, 'targetClass' => Village::className(), 'targetAttribute' => ['user_village_id' => 'vill_id']],
             [['user_district_id'], 'exist', 'skipOnError' => true, 'targetClass' => District::className(), 'targetAttribute' => ['user_district_id' => 'district_id']],
@@ -77,7 +77,7 @@ class UserProfile extends \yii\db\ActiveRecord
             'user_district_id' => 'User District ID',
             'user_tehsil_id' => 'User Tehsil ID',
             'user_pin_code' => 'User Pin Code',
-            'user_po' => 'User Po',
+           // 'user_po' => 'User Po',
             'user_id' => 'User ID',
             'is_active' => 'Is Active',
         ];
