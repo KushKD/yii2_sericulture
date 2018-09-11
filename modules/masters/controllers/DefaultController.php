@@ -170,4 +170,108 @@ class DefaultController extends Controller
                         }
                 return $ip_address;
             }
+
+
+            public function actionUpdate(){
+
+               // echo "<pre>"; print_r("This is some Text"); die();
+                $session = Yii::$app->session;
+                if(isset($session['userid'])){
+
+
+                   // $model = User::find($id);
+                   // $model->name = 'YII';
+                   // $model->email = 'yii2@framework.com';
+                   // $model->save();  // equivalent to $model->update();
+                 
+                   //Get the Data From Server
+                   $userProfileUpdate =   UserProfile::findOne(['user_id' => $session['userid']]);
+                   $bankDetailsUpdate =   UserBankDetail::findOne(['user_id' => $session['userid']]);
+
+                 
+        
+                 
+        
+                    $postArray=Yii::$app->request->post();
+        
+                   // echo "<pre>";print_r($postArray); die;
+                    
+
+                   
+                    
+                    
+        
+                    if(isset($postArray['UserProfile'],$postArray['UserBankDetail'],$postArray['app_submission'])){
+        
+                        //Update User Profile
+                        $userProfileUpdate->attributes=Yii::$app->request->post('UserProfile');
+        
+                        //Update Bank Details
+                        $bankDetailsUpdate->attributes=Yii::$app->request->post('UserBankDetail');
+
+                        //Update Application Subbmission Data
+                        $applicationDataUpdate = ApplicationSubmission::findOne(['user_id' => $session['userid']]);
+                        $application_data_Update_object = Yii::$app->request->post('app_submission');
+                        $application_data_Update_json =  json_encode($application_data_Update_object); 
+
+                        $applicationDataUpdate->field_value = $application_data_Update_json;
+                        echo "<pre>";print_r($applicationDataUpdate); 
+        
+                       
+                      
+        
+                       
+                     //   $application_submission = $this->populateApplicationSubmission($session['userid'],$application_data_json);
+                    $db = Yii::$app->db;
+                    $transaction = $db->beginTransaction();
+        
+                       try{
+                        //echo "<pre>";
+                        if($userProfileUpdate->validate() && $bankDetailsUpdate->validate() && $applicationDataUpdate->validate()){
+                            $userProfileUpdate->save();
+                             $bankDetailsUpdate->save();
+                              $applicationDataUpdate->save();
+        
+                              $transaction->commit();
+                              Yii::$app->getSession()->setFlash('success', 'Data Updated Successfully.');
+                
+                              return   $this->redirect(['index']);
+        
+        
+                        }
+                        else{
+                            $err="";
+                            $userProfileError=$userProfile->geterrors();
+                            if(!empty($userProfileError))
+                            foreach($userProfileError as $errrs)
+                                foreach($errrs as $err)
+                                    $err.="<li>$err</li>";
+                                    $bankDetails=$bankDetails->geterrors();
+                             if(!empty($bankDetails))
+                             foreach($bankDetails as $errrs)
+                                foreach($errrs as $err)
+                                    $err.="<li>$err</li>";
+        
+                                    $application_submission=$application_submission->geterrors();
+                            if(!empty($application_submission))
+                              foreach($application_submission as $errrs)
+                                foreach($errrs as $err)
+                                    $err.="<li>$err</li>";
+                             Yii::$app->getSession()->setFlash('danger', $err);
+                            $this->redirect(['index']);
+                            // exit;
+        
+        
+                        }
+                     
+        
+                       }catch(Exception $e){
+                        $transaction->rollback();
+                            throw new HttpException(520,'Records can not be saved.'. $e);
+                         }
+        
+                    }
+                }
+            
+            }
 }

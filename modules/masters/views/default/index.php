@@ -73,8 +73,26 @@
          function makeAjaxCall(a,e){return jQuery.ajax({url:a,data:e,dataType:"json",type:"POST",success:function(a){},error:function(a){}})}function sumLandCost(a,e){if(!checkLandUnitsAreSame())return $(".landAreaHelp").empty(),$(".landAreaHelp").html("Please Select Same Units in all the blocks of land detail."),!1;var n=0;$(".land_area").each(function(){n+=parseFloat(this.value)});var t=$(".landUnit").val();n=convertValueIntoBigha(n,t),land_rate=$("."+a).val(),n*=land_rate,$("."+e).val(n)}function checkLandUnitsAreSame(){var a=1,e="",n="",t=!0;return $(".landUnit").each(function(){e=this.value,a>1&&e!=n&&(t=!1),a++,n=e}),!!t}function checkLandAreaValidation(){}function checkLandUnit(){var a=$(".landUnit").val();$(".land_area").attr("readonly",!1),$(".helpGroup").empty(),"Bigha/Biswa/Biswansi"==a&&$(".helpGroup").html("<p>Value in 000-000-000</p>")}function convertValueIntoBigha(a,e){var n=1;switch(e){case"Kanal/Marla":n=.30939*a;break;case"Acre":n=.0616*a;break;case"Sq. Meter":n=616e-6*a;break;case"Hectare":n=6.1772*a;break;case"Bigha/Biswa/Biswansi":n=1*a}return n}
          
          
+         //Form Action  Update
+         function de_update() {
+           alert("Update");
+           var apiURL= '<?php echo Yii::$app->urlManager->createUrl('frontend/default/update' ) ?>';
+
+              var form = document.getElementById("sericulture_caf");
+    form.action = apiURL;
+    form.submit();
+         }
+
+         //Form Action Save
+         function de_save() {
+           alert("Save the Data");
+           var apiURL= '<?php echo Yii::$app->urlManager->createUrl('frontend/default/save' ) ?>';
+              var form = document.getElementById("sericulture_caf");
+              form.action = apiURL;
+              form.submit();
+         }
          
-         
+
          
          //Adding the Data Cell
     function addCooconProduction() {
@@ -202,7 +220,7 @@
          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
       </ul>
       </div>
-      <form method="POST" action="<?=Yii::$app->urlManager->createUrl('frontend/default/save')?>">
+      <form method="POST" id="sericulture_caf" >
       <div class="row">
          <div class="col-md-12">
             <div class="tile">
@@ -707,6 +725,18 @@
       </div>
       <?php $this->endBody() ?>
    </body>
-   <input type="submit" class="btn btn-primary">
+
+    <?php
+              if(!isset($fields->coocon_year)){
+                ?>
+   <button type="button"  onclick="de_save();" class="btn btn-primary"> Save </button>
+        <?php 
+              }else{
+              ?>
+                <button type="button"  onclick="de_update();" class="btn btn-warning"> Update </button>
+                <?php
+              }
+              ?>
+
 </html>
 <?php $this->endPage() ?>
