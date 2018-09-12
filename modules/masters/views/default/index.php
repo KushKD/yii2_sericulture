@@ -72,40 +72,332 @@
          
          function makeAjaxCall(a,e){return jQuery.ajax({url:a,data:e,dataType:"json",type:"POST",success:function(a){},error:function(a){}})}function sumLandCost(a,e){if(!checkLandUnitsAreSame())return $(".landAreaHelp").empty(),$(".landAreaHelp").html("Please Select Same Units in all the blocks of land detail."),!1;var n=0;$(".land_area").each(function(){n+=parseFloat(this.value)});var t=$(".landUnit").val();n=convertValueIntoBigha(n,t),land_rate=$("."+a).val(),n*=land_rate,$("."+e).val(n)}function checkLandUnitsAreSame(){var a=1,e="",n="",t=!0;return $(".landUnit").each(function(){e=this.value,a>1&&e!=n&&(t=!1),a++,n=e}),!!t}function checkLandAreaValidation(){}function checkLandUnit(){var a=$(".landUnit").val();$(".land_area").attr("readonly",!1),$(".helpGroup").empty(),"Bigha/Biswa/Biswansi"==a&&$(".helpGroup").html("<p>Value in 000-000-000</p>")}function convertValueIntoBigha(a,e){var n=1;switch(e){case"Kanal/Marla":n=.30939*a;break;case"Acre":n=.0616*a;break;case"Sq. Meter":n=616e-6*a;break;case"Hectare":n=6.1772*a;break;case"Bigha/Biswa/Biswansi":n=1*a}return n}
          
-         
-         //Form Action  Update
-         function de_update() {
-           alert("Update");
-           var apiURL= '<?php echo Yii::$app->urlManager->createUrl('frontend/default/update' ) ?>';
 
-              var form = document.getElementById("sericulture_caf");
-    form.action = apiURL;
-    form.submit();
+         //Alert PopUp
+
+         function showAlert(alert_message){
+          $.notify({
+      		title: "",
+      		message: "&nbsp;"+alert_message,
+          icon: 'fa fa-exclamation-triangle  '
+      	},{
+      		type: "danger"
+      	});
          }
 
+
+
+
+        
+
+         
+          //Validations goes Here
+          function validateFields(){
+         
+         var father_husband_name  = document.getElementById("father_husband_name").value;
+         var age  = document.getElementById("age").value;
+         var annual_income  = document.getElementById("annual_income").value;
+         var gender  = document.getElementById("gender").value;
+         var caste  = document.getElementById("caste").value;
+         var education_qualification  = document.getElementById("education_qualification").value;
+         var occupation  = document.getElementById("occupation").value;
+         var district  = document.getElementById("district").value;
+         var tehsil  = document.getElementById("tehsil").value;
+         var village   = document.getElementById("village").value;
+         var pin_code  = document.getElementById("pin_code").value;
+         var address  = document.getElementById("address").value;
+         
+         var bank_name  = document.getElementById("bank_name").value;
+         var account_number  = document.getElementById("account_number").value;
+         var ifsc_code  = document.getElementById("ifsc_code").value;
+         var account_holder_name  = document.getElementById("account_holder_name").value;
+         var account_type  = document.getElementById("account_type").value;
+         var bank_address  = document.getElementById("bank_address").value;
+         
+         var total_land  = document.getElementById("total_land").value;
+         var irrigated_land  = document.getElementById("irrigated_land").value;
+         var rain_fed  = document.getElementById("rain_fed").value;
+         var mulberry_land  = document.getElementById("mulberry_land").value;
+         
+         
+         var one_to_three  = document.getElementById("one_to_three").value;
+         var three_to_five  = document.getElementById("three_to_five").value;
+         var five_to_ten  = document.getElementById("five_to_ten").value;
+         var more_than_ten  = document.getElementById("more_than_ten").value;
+         var total_number  = document.getElementById("total_number").value;
+         
+         var rearing_house  = document.getElementById("rearing_house").value;
+         var kacha_pakka_house  = document.getElementById("kacha_pakka_house").value;
+         var area_house_shed  = document.getElementById("area_house_shed").value;
+         
+         var coocon_year  = document.getElementById("coocon_year").value;
+         var coocon_seed_quantity  = document.getElementById("coocon_seed_quantity").value;
+         var green_coocon_harvested  = document.getElementById("green_coocon_harvested").value;
+         var rate_spring_crop  = document.getElementById("rate_spring_crop").value;
+         var amount_realized  = document.getElementById("amount_realized").value;
+         
+         var silkworm_experience  = document.getElementById("silkworm_experience").value;
+         
+         var training_type  = document.getElementById("training_type").value;
+         var duration  = document.getElementById("duration").value;
+         var subject  = document.getElementById("subject").value;
+         var agency  = document.getElementById("agency").value;
+         var upload_certificate  = document.getElementById("upload_certificate").value;
+         
+         var male  = document.getElementById("male").value;
+         var female  = document.getElementById("female").value;
+         var children  = document.getElementById("children").value;
+         var family_labor_availability  = document.getElementById("family_labor_availability").value;
+         
+         
+         
+         
+         
+         
+         if(father_husband_name == "" || father_husband_name == null){
+          showAlert("Please enter Father or Husband name");
+         return false;
+         }
+         else if(age == "" || age == null){
+          showAlert("Please enter your age ");
+         return false;
+         }
+         else if(annual_income == "" || annual_income == null){
+          showAlert("Please enter your Annual Income ");
+         return false;
+         }
+         else if(gender == "" || gender == null){
+          showAlert("Please Select your gender");
+         return false;
+         }
+         else if(caste == "" || caste == null){
+          showAlert("Please Select your caste");
+         return false;
+         }
+         else if(education_qualification == "" || education_qualification == null){
+          showAlert("Please Select your Education Qualification");
+         return false;
+         }
+         else if(occupation == "" || occupation == null){
+          showAlert("Please Enter your Profession/Occupation ");
+         return false;
+         }
+         else if(district == "" || district == null){
+          showAlert("Please Select District");
+         return false;
+         }
+         
+         else if(tehsil == "" || tehsil == null){
+          showAlert("Please Select Tehsil");
+         return false;
+         }
+         
+         else if(village == "" || village == null){
+          showAlert("Please Select your Village");
+         return false;
+         }
+         
+         else if(pin_code == "" || pin_code == null){
+          showAlert("Please enter your Pin Code");
+         return false;
+         }
+         
+         else if(address == "" || address == null){
+          showAlert("Please enter your permanent Address");
+         return false;
+         }
+         
+         
+         //Bank Details Goes Here
+         else if(bank_name == "" || bank_name == null){
+          showAlert("Please Enter your Bank name ");
+         return false;
+         }
+         else if(account_number == "" || account_number == null){
+          showAlert("Please enter your valid Account Number");
+         return false;
+         }
+         
+         else if(ifsc_code == "" || ifsc_code == null){
+          showAlert("Please enter the Bank IFSC Code");
+         return false;
+         }
+         
+         else if(account_holder_name == "" || account_holder_name == null){
+          showAlert("Please enter the account Holder name");
+         return false;
+         }
+         
+         else if(account_type == "" || account_type == null){
+          showAlert("Please enter the Type of account. Account type can be Saving/Current etc.");
+         return false;
+         }
+         
+         else if(bank_address == "" || bank_address == null){
+          showAlert("Please enter the Bank address ");
+         return false;
+         }
+         
+         //Status Of Land
+         else if(total_land == "" || total_land == null){
+          showAlert("Please enter the total Land in acers");
+         return false;
+         }
+         
+         else if(irrigated_land == "" || irrigated_land == null){
+          showAlert("Please enter the Irregated Land in acers");
+         return false;
+         }
+         
+         else if(rain_fed == "" || rain_fed == null){
+          showAlert("Please enter the Rain Fed Land in acres");
+         return false;
+         }
+         
+         else if(mulberry_land == "" || mulberry_land == null){
+          showAlert("Please enter the Land available for Mulberry Plantation (In Acers)");
+         return false;
+         }
+         
+         //Existing Mullbery Plantation
+         else if(one_to_three == "" || one_to_three == null){
+          showAlert("Please enter Existing Mullbery Plantation between 1 to 3 years");
+         return false;
+         }
+         
+         else if(three_to_five == "" || three_to_five == null){
+          showAlert("Please enter Existing Mullbery Plantation between 3 to 5 years");
+         return false;
+         }
+         
+         else if(five_to_ten == "" || five_to_ten == null){
+          showAlert("Please enter Existing Mullbery Plantation between 5 to 10 years");
+         return false;
+         }
+         
+         else if(more_than_ten == "" || more_than_ten == null){
+          showAlert("Please enter Existing Mullbery Plantation for more than 10 years");
+         return false;
+         }
+         else if(total_number == "" || total_number == null){
+          showAlert("Please enter the total number");
+         return false;
+         }
+         
+         //Existing Rearing Space Available
+         else if(rearing_house == "" || rearing_house == null){
+          showAlert("Please enter Existing Rearing Space Available for Rearing House (Dwelling/Seperate)");
+         return false;
+         }
+         
+         else if(kacha_pakka_house == "" || kacha_pakka_house == null){
+          showAlert("Please enter Existing Rearing Space Available for Kacha/Pakka House/ Shed");
+         return false;
+         }
+         else if(area_house_shed == "" || area_house_shed == null){
+          showAlert("Please enter the  Area for House Shed");
+         return false;
+         }
+         
+         //SilkWorm Experience
+         else if(silkworm_experience == "" || silkworm_experience == null){
+          showAlert("Please enter your Total Experience in silkworm rearing (Years)");
+         return false;
+         }
+         
+         //Trainning If Any
+         else if(training_type == "" || training_type == null){
+          showAlert("Please enter the type of training (Particifation in Sericulture Training Programme) ");
+         return false;
+         }
+         
+         else if(duration == "" || duration == null){
+          showAlert("Please enter the Duration of training (Particifation in Sericulture Training Programme) ");
+         return false;
+         }
+         else if(subject == "" || subject == null){
+          showAlert("Please enter the Subject of training (Particifation in Sericulture Training Programme)");
+         return false;
+         }
+         else if(agency == "" || agency == null){
+          showAlert("Please enter the Aency  (Particifation in Sericulture Training Programme)");
+         return false;
+         }
+         
+         else if(upload_certificate == "" || upload_certificate == null){
+          showAlert("Please attach certificates for trainin if any.");
+         return false;
+         }
+         
+         //Family Size
+         else if(male == "" || male == null){
+          showAlert("Please enter the total number of Male in your family");
+         return false;
+         }
+         else if(female == "" || female == null){
+          showAlert("Please enter the total number of Female in your family");
+         return false;
+         }
+         else if(children == "" || children == null){
+          showAlert("Please enter the total number of Children in your family");
+         return false;
+         }
+         
+         else if(family_labor_availability == "" || family_labor_availability == null){
+          showAlert("Please select Is Family Labor Available ");
+         return false;
+         }
+         return true;
+         }
+         
+         
+
+
+
+
+
+
+
+         //Form Action  Update
+         function de_update() {
+
+             if(validateFields()){
+              alert("Update");
+           var apiURL= '<?php echo Yii::$app->urlManager->createUrl('frontend/default/update' ) ?>';
+         
+              var form = document.getElementById("sericulture_caf");
+         form.action = apiURL;
+         form.submit();
+
+             }
+          
+         }
+         
          //Form Action Save
          function de_save() {
+          if(validateFields()){
            alert("Save the Data");
            var apiURL= '<?php echo Yii::$app->urlManager->createUrl('frontend/default/save' ) ?>';
               var form = document.getElementById("sericulture_caf");
               form.action = apiURL;
               form.submit();
+          }
          }
          
-
+         
          
          //Adding the Data Cell
-    function addCooconProduction() {
+         function addCooconProduction() {
          
          //validateFields();
          // year, quantity of seed, Quantity of Green Coocons, Rate, Total Amount
          var html = "";
           <?php  
-               $fields="";
-               if(isset($userApplicationData->field_value))
-                   $fields=json_decode($userApplicationData->field_value);
-              if(!isset($fields->coocon_year)){
-                ?>
+            $fields="";
+            if(isset($userApplicationData->field_value))
+                $fields=json_decode($userApplicationData->field_value);
+            if(!isset($fields->coocon_year)){
+             ?>
                  html += "<table id='parameterTable' class='table table-hover table-bordered' style='width:100%''>";
                 html += "<thead> ";
                 html += "<td class='text-center' style='width:5%;color:black;padding:10px;'>S.No</td> ";
@@ -117,8 +409,8 @@
                 html += "<td class='text-center' style='width:10%;color:black; padding:10px;'>Remove</td>";
                 html += "</thead>";
                <?php
-              }
-          ?>
+            }
+            ?>
          countClicks++;
          if(countClicks==1 && <?php if(!isset($fields->coocon_year)) echo 1; else echo 0;?>){
          console.log(countClicks + "if");
@@ -128,7 +420,7 @@
          html += "<td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' name='app_submission[coocon_seed_quantity][]'/></td>";
          
          html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);'  readonly type='text' id='green_coocon_harvested_' name='app_submission[green_coocon_harvested][]'/></td> ";
-        
+         
          html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='rate_spring_crop_' name='app_submission[rate_spring_crop][]' /></td> ";
          html += "<td style='width:10%'><input class=' form-control ' onkeypress='return isNumberKey(event);' readonly type='text' id='amount_realized_' name='app_submission[amount_realized][]'/></td> ";
          
@@ -136,9 +428,9 @@
          html += "<td style='width:10%'><a onclick='deleteRow(this)' id='delPOIbutton' class='btn btn-info'> Remove </a></td> ";
          html += "</tr>";
          <?php
-              if(!isset($fields->coocon_year)){
-                ?>
-
+            if(!isset($fields->coocon_year)){
+              ?>
+         
                 html += "</table>";
                 document.getElementById("coocon_table").innerHTML = html;
                 coocon_year_.value = document.getElementById('coocon_year').selectedOptions[0].text;
@@ -147,16 +439,16 @@
                 rate_spring_crop_.value = document.getElementById('rate_spring_crop').value;
                 amount_realized_.value = document.getElementById('amount_realized').value;
               <?php
-              }
+            }
             ?>
          }
          else{
            console.log(countClicks + "else");
           insRow();
-
+         
          }
          
-    }
+         }
          
          function insRow() {
          
@@ -204,6 +496,53 @@
          countClicks--;
          
          }
+
+
+          function cooconvalidateFields(){
+
+var coocon_year  = document.getElementById("coocon_year").value;
+var coocon_seed_quantity  = document.getElementById("coocon_seed_quantity").value;
+var green_coocon_harvested  = document.getElementById("green_coocon_harvested").value;
+var rate_spring_crop  = document.getElementById("rate_spring_crop").value;
+var amount_realized  = document.getElementById("amount_realized").value;
+
+if(coocon_year == "" || coocon_year == null){
+      showAlert("Please select the year for Coocon Production");
+     return false;
+     }
+     else if(coocon_seed_quantity == "" || coocon_seed_quantity == null){
+      showAlert("Please enter the Quantaty of Seed reared (Ounce)   ");
+     return false;
+     }
+     else if(green_coocon_harvested == "" || green_coocon_harvested == null){
+      showAlert("Please enter the Quantity of Green Cooons Harvested (In KG) ");
+     return false;
+     }
+     else if(rate_spring_crop == "" || rate_spring_crop == null){
+      showAlert("Please enter the Rate (Rs)/ Spring Crop ");
+     return false;
+     }  else if(amount_realized == "" || amount_realized == null){
+      showAlert("Please enter the Total Amount Realized (Rupees) ");
+     return false;
+     }
+     return true;
+}
+
+
+
+        function validateCooconData(){
+           if(cooconvalidateFields()){
+            addCooconProduction();  
+             document.getElementById("coocon_year").value = "";
+ document.getElementById("coocon_seed_quantity").value = "";
+ document.getElementById("green_coocon_harvested").value = "";
+ document.getElementById("rate_spring_crop").value ="";
+ document.getElementById("amount_realized").value = "";
+           }
+         }
+         
+         
+         
          
          
          
@@ -235,11 +574,11 @@
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Age</label>
-                        <input class="form-control" type="text" id="age" name="UserProfile[user_age]" value="<?=@$userProfileData->user_age?>" >
+                        <input class="form-control" type="text" id="age" name="UserProfile[user_age]" onkeypress="return validateKey1(event,	this,'9@3@3')" value="<?=@$userProfileData->user_age?>" >
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Annual Income</label>
-                        <input class="form-control" type="text" id="annual_income" name="UserProfile[user_annual_income]" value="<?=@$userProfileData->user_annual_income?>" >
+                        <input class="form-control" type="text" id="annual_income" name="UserProfile[user_annual_income]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$userProfileData->user_annual_income?>" >
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -350,7 +689,7 @@
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label"> Pin Code</label>
-                        <input class="form-control" type="text" id="pin_code" name="UserProfile[user_pin_code]" value="<?=@$userProfileData->user_pin_code?>">
+                        <input class="form-control" type="text" id="pin_code" onkeypress="return validateKey1(event,	this,'9@6@3')" name="UserProfile[user_pin_code]" value="<?=@$userProfileData->user_pin_code?>">
                      </div>
                   </div>
                   <!-- ROW four ends Here -->
@@ -381,7 +720,7 @@
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Account Number</label>
-                        <input class="form-control" type="text" id="account_number" name="UserBankDetail[account_number]" value="<?=@$userBankDetails->account_number?>">
+                        <input class="form-control" type="text" id="account_number" name="UserBankDetail[account_number]" onkeypress="return validateKey1(event,	this,'9@16@3')" value="<?=@$userBankDetails->account_number?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">IFSC Code</label>
@@ -401,7 +740,7 @@
                      </div>
                      <div class="form-group col-md-4">
                         <label for="address">Bank Address</label>
-                        <textarea class="form-control" id="address" rows="3" id="bank_address" name="UserBankDetail[bank_address]" ><?=@$userBankDetails->bank_address?></textarea>
+                        <textarea class="form-control" id="bank_address" rows="3" id="bank_address" name="UserBankDetail[bank_address]" ><?=@$userBankDetails->bank_address?></textarea>
                      </div>
                   </div>
                   <!-- Row Two Ends Here -->
@@ -411,10 +750,10 @@
       </div>
       <!-- Bank Details -->
       <?php
-        // $fields="";
-        //  if(isset($userApplicationData->field_value))
-        //      $fields=json_decode($userApplicationData->field_value);
-        //  ?>
+         // $fields="";
+         //  if(isset($userApplicationData->field_value))
+         //      $fields=json_decode($userApplicationData->field_value);
+         //  ?>
       <!-- Status of Land -->
       <div class="row">
          <div class="col-md-12">
@@ -426,15 +765,15 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Total Land (In Acers)</label>
-                        <input class="form-control" type="text" id="total_land" name="app_submission[Land_status_total_land]" value="<?=@$fields->Land_status_total_land?>" >
+                        <input class="form-control" type="text" id="total_land" name="app_submission[Land_status_total_land]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->Land_status_total_land?>" >
                      </div>
                      <div class="form-group col-md-4" >
                         <label class="control-label">Irrigated Land (In Acers)</label>
-                        <input class="form-control" type="text" id="irrigated_land" name="app_submission[Land_status_irrigated_land]" value="<?=@$fields->Land_status_irrigated_land?>">
+                        <input class="form-control" type="text" id="irrigated_land" name="app_submission[Land_status_irrigated_land]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->Land_status_irrigated_land?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Rain Fed (In Acers)</label>
-                        <input class="form-control" type="text" id="rain_fed"  name="app_submission[Land_status_rain_fed]" value="<?=@$fields->Land_status_rain_fed?>">
+                        <input class="form-control" type="text" id="rain_fed"  name="app_submission[Land_status_rain_fed]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->Land_status_rain_fed?>">
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -442,7 +781,7 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Land available for Mulberry Plantation (In Acers) </label>
-                        <input class="form-control" type="text" id="mulberry_land"  name="app_submission[Land_status_mulberry_land]" value="<?=@$fields->Land_status_mulberry_land?>">
+                        <input class="form-control" type="text" id="mulberry_land"  name="app_submission[Land_status_mulberry_land]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->Land_status_mulberry_land?>">
                      </div>
                   </div>
                   <!-- Row Two Ends Here -->
@@ -462,27 +801,27 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">1-3 Years</label>
-                        <input class="form-control" type="text" id="one_to_three"  name="app_submission[mulberry_plantation_one_to_three]" value="<?=@$fields->mulberry_plantation_one_to_three?>">
+                        <input class="form-control" type="text" id="one_to_three"  name="app_submission[mulberry_plantation_one_to_three]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->mulberry_plantation_one_to_three?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">3-5 Years</label>
-                        <input class="form-control" type="text" id="three_to_five" name="app_submission[mulberry_plantation_three_to_five]" value="<?=@$fields->mulberry_plantation_three_to_five?>" >
+                        <input class="form-control" type="text" id="three_to_five" name="app_submission[mulberry_plantation_three_to_five]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->mulberry_plantation_three_to_five?>" >
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">5-10 Years</label>
-                        <input class="form-control" type="text" id="five_to_ten"  name="app_submission[mulberry_plantation_five_to_ten_three_to_five]" value="<?=@$fields->mulberry_plantation_five_to_ten_three_to_five?>">
+                        <input class="form-control" type="text" id="five_to_ten"  name="app_submission[mulberry_plantation_five_to_ten_three_to_five]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->mulberry_plantation_five_to_ten_three_to_five?>">
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
                   <!-- ROW TWO -->
                   <div class="row">
                      <div class="form-group col-md-4">
-                        <label class="control-label">More than 10 years</label>
-                        <input class="form-control" type="text" id="more_than_ten" name="app_submission[mulberry_plantation_more_than_ten]" value="<?=@$fields->mulberry_plantation_more_than_ten?>">
+                        <label class="control-label">More than 10 years</label> 
+                        <input class="form-control" type="text" id="more_than_ten" name="app_submission[mulberry_plantation_more_than_ten]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->mulberry_plantation_more_than_ten?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Total Number</label>
-                        <input class="form-control" type="text" id="total_number" name="app_submission[mulberry_plantation_total_number]" value="<?=@$fields->mulberry_plantation_total_number?>">
+                        <input class="form-control" type="text" id="total_number" name="app_submission[mulberry_plantation_total_number]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->mulberry_plantation_total_number?>">
                      </div>
                   </div>
                   <!-- Row Two Ends Here -->
@@ -502,15 +841,15 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Rearing House (Dwelling/Seperate)</label>
-                        <input class="form-control" type="text" id="rearing_house" name="app_submission[rearing_space_rearing_house]" value="<?=@$fields->rearing_space_rearing_house?>">
+                        <input class="form-control" type="text" id="rearing_house" name="app_submission[rearing_space_rearing_house]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->rearing_space_rearing_house?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Kacha/Pakka House/ Shed</label>
-                        <input class="form-control" type="text"  id="kacha_pakka_house" name="app_submission[rearing_space_kacha_pakka_house]" value="<?=@$fields->rearing_space_kacha_pakka_house?>">
+                        <input class="form-control" type="text"  id="kacha_pakka_house" name="app_submission[rearing_space_kacha_pakka_house]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->rearing_space_kacha_pakka_house?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Area Of House Shed</label>
-                        <input class="form-control" type="text" id="area_house_shed" name="app_submission[rearing_space_area_house_shed]" value="<?=@$fields->rearing_space_area_house_shed?>">
+                        <input class="form-control" type="text" id="area_house_shed" name="app_submission[rearing_space_area_house_shed]" onkeypress="return validateKey1(event,	this,'9@10@3')" value="<?=@$fields->rearing_space_area_house_shed?>">
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -543,11 +882,11 @@
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Quantaty of Seed reared (Ounce)</label>
-                        <input class="form-control" type="text" id="coocon_seed_quantity" >
+                        <input class="form-control" type="text" onkeypress="return validateKey1(event,	this,'9@10@3')" id="coocon_seed_quantity" >
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Quantity of Green Cooons Harvested (In KG)</label>
-                        <input class="form-control" type="text" id="green_coocon_harvested" >
+                        <input class="form-control" type="text" onkeypress="return validateKey1(event,	this,'9@10@3')" id="green_coocon_harvested" >
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -555,11 +894,11 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Rate (Rs)/ Spring Crop</label>
-                        <input class="form-control" type="text" id="rate_spring_crop" >
+                        <input class="form-control" type="text" onkeypress="return validateKey1(event,	this,'9@10@3')" id="rate_spring_crop" >
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Total Amount Realized (Rupees)</label>
-                        <input class="form-control" type="text" id="amount_realized" >
+                        <input class="form-control" type="text" onkeypress="return validateKey1(event,	this,'9@10@3')" id="amount_realized" >
                      </div>
                      <!-- <div class="form-group col-md-4">
                         <label class="control-label">Total Amount Realized (Rupees)</label>
@@ -574,50 +913,47 @@
                         </div>
                         </div> -->
                      <div class="bs-component" style="margin-top:30px;">
-                        <button class="btn btn-primary btn-sm" onclick="addCooconProduction();" type="button">Add</button>
+                        <button class="btn btn-primary btn-sm" onclick="validateCooconData();" type="button">Add</button>
                      </div>
                   </div>
                   <!-- Row Two Ends Here -->
                   <!-- Row Three Ends Here -->
                   <div class="row">
                      <div class="col-lg-12" id="coocon_table">
-                          
-
-                          <?php
-
-                        if(isset($fields->coocon_year) && is_array($fields->coocon_year)){
-                            echo "                   
-                            <table id='parameterTable' class='table table-hover table-bordered' style='width:100%'>
-                            <thead> 
-                              <tr>
-                                <td class='text-center' style='width:5%;color:black;padding:10px;'>S.No</td> 
-                                <td class='text-center' style='width:15%;color:black;padding:10px;'> Yea </td>
-                                <td class='text-center' style='width:15%;color:black;padding:10px;'> Quantity of seed reared (ounce)</td>
-                              
-                                <td class='text-center'style='width:10%;color:black;padding:10px;'>Quantity of Green Coocons Harvested (kg) </td>
-                                <td class='text-center'style='width:10%;color:black;padding:10px;'>Rate (Rs)/Spring Crop</td>
-                                <td class='text-center' style='width:10%; color:black;padding:10px;'>Total Amount</td> 
-                                <td class='text-center' style='width:10%;color:black; padding:10px;'>Remove</td>
-                              </tr>
-                            </thead>
-                            " ;
-                            $count=1;
-                          foreach($fields->coocon_year as $key=> $coocon){
-                            if(empty($coocon))
-                               continue;
-                            echo "<tr>
-                                <td class='text-center' style='width:5%'>".$count++."</td> 
-                                <td style='width:15%'><input class='form-control' readonly type='text' id='coocon_year_' name='app_submission[coocon_year][]' value='".@$fields->coocon_year[$key]."'/></td>
-                                <td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' name='app_submission[coocon_seed_quantity][]' value='".@$fields->coocon_seed_quantity[$key]."'/></td>
-                                <td style='width:10%'><input class=' form-control '   readonly type='text' id='green_coocon_harvested_' name='app_submission[green_coocon_harvested][]' value='".@$fields->green_coocon_harvested[$key]."'/></td> 
-                                <td style='width:10%'><input class=' form-control '  readonly type='text' id='rate_spring_crop_' name='app_submission[rate_spring_crop][]' value='".@$fields->rate_spring_crop[$key]."'/></td> 
-                                <td style='width:10%'><input class=' form-control '  readonly type='text' id='amount_realized_' name='app_submission[amount_realized][]' value='".@$fields->amount_realized[$key]."'/></td> 
-                                <td style='width:10%'><a onclick='deleteRow(this)' id='delPOIbutton' class='btn btn-info'> Remove </a></td> 
-                            </tr>";
-                          }
-                          echo "</table>";
-                        }
-                        ?>
+                        <?php
+                           if(isset($fields->coocon_year) && is_array($fields->coocon_year)){
+                               echo "                   
+                               <table id='parameterTable' class='table table-hover table-bordered' style='width:100%'>
+                               <thead> 
+                                 <tr>
+                                   <td class='text-center' style='width:5%;color:black;padding:10px;'>S.No</td> 
+                                   <td class='text-center' style='width:15%;color:black;padding:10px;'> Yea </td>
+                                   <td class='text-center' style='width:15%;color:black;padding:10px;'> Quantity of seed reared (ounce)</td>
+                                 
+                                   <td class='text-center'style='width:10%;color:black;padding:10px;'>Quantity of Green Coocons Harvested (kg) </td>
+                                   <td class='text-center'style='width:10%;color:black;padding:10px;'>Rate (Rs)/Spring Crop</td>
+                                   <td class='text-center' style='width:10%; color:black;padding:10px;'>Total Amount</td> 
+                                   <td class='text-center' style='width:10%;color:black; padding:10px;'>Remove</td>
+                                 </tr>
+                               </thead>
+                               " ;
+                               $count=1;
+                             foreach($fields->coocon_year as $key=> $coocon){
+                               if(empty($coocon))
+                                  continue;
+                               echo "<tr>
+                                   <td class='text-center' style='width:5%'>".$count++."</td> 
+                                   <td style='width:15%'><input class='form-control' readonly type='text' id='coocon_year_' name='app_submission[coocon_year][]' value='".@$fields->coocon_year[$key]."'/></td>
+                                   <td style='width:15%;'><input class=' form-control' readonly type='text' id='coocon_seed_quantity_' name='app_submission[coocon_seed_quantity][]' value='".@$fields->coocon_seed_quantity[$key]."'/></td>
+                                   <td style='width:10%'><input class=' form-control '   readonly type='text' id='green_coocon_harvested_' name='app_submission[green_coocon_harvested][]' value='".@$fields->green_coocon_harvested[$key]."'/></td> 
+                                   <td style='width:10%'><input class=' form-control '  readonly type='text' id='rate_spring_crop_' name='app_submission[rate_spring_crop][]' value='".@$fields->rate_spring_crop[$key]."'/></td> 
+                                   <td style='width:10%'><input class=' form-control '  readonly type='text' id='amount_realized_' name='app_submission[amount_realized][]' value='".@$fields->amount_realized[$key]."'/></td> 
+                                   <td style='width:10%'><a onclick='deleteRow(this)' id='delPOIbutton' class='btn btn-info'> Remove </a></td> 
+                               </tr>";
+                             }
+                             echo "</table>";
+                           }
+                           ?>
                      </div>
                   </div>
                   <!-- Row Three Ends Here -->
@@ -637,7 +973,7 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Total Experience in silkworm rearing (Years)</label>
-                        <input class="form-control" type="text" id="silkworm_experience" name="app_submission[silkworm_production_silkworm_experience]" value="<?=@$fields->silkworm_production_silkworm_experience?>">
+                        <input class="form-control" type="text" id="silkworm_experience" onkeypress="return validateKey1(event,	this,'9@3@3')" name="app_submission[silkworm_production_silkworm_experience]" value="<?=@$fields->silkworm_production_silkworm_experience?>">
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -660,8 +996,8 @@
                         <input class="form-control" type="text" id="training_type"  name="app_submission[stp_training_type]" value="<?=@$fields->stp_training_type?>">
                      </div>
                      <div class="form-group col-md-4">
-                        <label class="control-label">Duration</label>
-                        <input class="form-control" type="text" id="duration"  name="app_submission[stp_duration]" value="<?=@$fields->stp_duration?>">
+                        <label class="control-label">Duration (In Months)</label>
+                        <input class="form-control" type="text" id="duration" onkeypress="return validateKey1(event,	this,'9@10@3')"  name="app_submission[stp_duration]" value="<?=@$fields->stp_duration?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Subject</label>
@@ -697,15 +1033,15 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Male</label>
-                        <input class="form-control" type="text" id="male"  name="app_submission[family_size_male]"   value="<?=@$fields->family_size_male?>">
+                        <input class="form-control" type="text" id="male"  name="app_submission[family_size_male]" onkeypress="return validateKey1(event,	this,'9@3@3')"  value="<?=@$fields->family_size_male?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Female</label>
-                        <input class="form-control" type="text" id="female"  name="app_submission[family_size_female]"  value="<?=@$fields->family_size_female?>">
+                        <input class="form-control" type="text" id="female"  name="app_submission[family_size_female]" onkeypress="return validateKey1(event,	this,'9@3@3')"  value="<?=@$fields->family_size_female?>">
                      </div>
                      <div class="form-group col-md-4">
                         <label class="control-label">Children</label>
-                        <input class="form-control" type="text" id="children" name="app_submission[family_size_children]"  value="<?=@$fields->family_size_children?>">
+                        <input class="form-control" type="text" id="children" name="app_submission[family_size_children]" onkeypress="return validateKey1(event,	this,'9@3@3')"  value="<?=@$fields->family_size_children?>">
                      </div>
                   </div>
                   <!-- Row One Ends Here -->  
@@ -713,7 +1049,7 @@
                   <div class="row">
                      <div class="form-group col-md-4">
                         <label class="control-label">Family Labor Available</label>
-                        <input class="form-control" type="text" id="family_labor_availability" name="app_submission[family_size_family_labor_availability]"  value="<?=@$fields->family_size_family_labor_availability?>" >
+                        <input class="form-control" type="text" id="family_labor_availability" name="app_submission[family_size_family_labor_availability]" onkeypress="return validateKey1(event,	this,'9@3@3')" value="<?=@$fields->family_size_family_labor_availability?>" >
                      </div>
                   </div>
                   <!-- Row Two Ends Here -->
@@ -725,18 +1061,16 @@
       </div>
       <?php $this->endBody() ?>
    </body>
-
-    <?php
-              if(!isset($fields->coocon_year)){
-                ?>
+   <?php
+      if(!isset($fields->coocon_year)){
+        ?>
    <button type="button"  onclick="de_save();" class="btn btn-primary"> Save </button>
-        <?php 
-              }else{
-              ?>
-                <button type="button"  onclick="de_update();" class="btn btn-warning"> Update </button>
-                <?php
-              }
-              ?>
-
+   <?php 
+      }else{
+      ?>
+   <button type="button"  onclick="de_update();" class="btn btn-warning"> Update </button>
+   <?php
+      }
+      ?>
 </html>
 <?php $this->endPage() ?>

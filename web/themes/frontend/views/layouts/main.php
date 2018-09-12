@@ -216,7 +216,9 @@ else{
      <script src="<?=Yii::$app->view->theme->baseUrl?>/js/jquery-3.2.1.min.js"></script>
     <script src="<?=Yii::$app->view->theme->baseUrl?>/js/popper.min.js"></script>
     <script src="<?=Yii::$app->view->theme->baseUrl?>/js/bootstrap.min.js"></script>
+    <script src="<?=Yii::$app->view->theme->baseUrl?>/js/plugins/bootstrap-notify.min.js"></script>
     <script src="<?=Yii::$app->view->theme->baseUrl?>/js/main.js"></script>
+    <script src="<?=Yii::$app->view->theme->baseUrl?>/js/common.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 

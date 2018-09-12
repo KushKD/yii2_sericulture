@@ -30,9 +30,13 @@ class DefaultController extends Controller
             $userApplicationData = ApplicationSubmission::find()->where(["user_id"=>$session['userid']])->one();
             return $this->render('index',["distt"=>$distt,"userProfileData"=>$userProfileData,"userBankDetails"=>$userBankDetails , "userApplicationData"=>$userApplicationData]);
         }
-        
     }
-
+    // function getIncompleteModelsofUser($uid){
+    //     $userProfileData = UserProfile::find()->where(["is_active"=>"Y","user_id"=>$session['userid']])->one(); 
+    //     $userBankDetails = UserBankDetail::find()->where(["user_id"=>$session['userid']])->one();
+    //     $userApplicationData = ApplicationSubmission::find()->where(["user_id"=>$session['userid']])->one();
+    //     return ["userProfileData"=>$userProfileData,"userBankDetails"=>$userBankDetails,$userApplicationData=>$userApplicationData];
+    // }
 
 
     public function actionSave(){
@@ -49,11 +53,11 @@ class DefaultController extends Controller
             // echo "<pre>";print_r( $session['userid']);die;
            $userProfile=new UserProfile;
            $userProfile->user_id = $session['userid'];
-
-            $bankDetails = new UserBankDetail;
-            $bankDetails->user_id = $session['userid'];
-
-            $postArray=Yii::$app->request->post();
+           $bankDetails = new UserBankDetail;
+           $bankDetails->user_id = $session['userid'];
+           $application_submission = new ApplicationSubmission;
+          
+           $postArray=Yii::$app->request->post();
 
            // echo "<pre>";print_r($postArray); die;
            //  echo "<pre>";print_r($postArray['UserBankDetail']); die;
@@ -73,10 +77,9 @@ class DefaultController extends Controller
                 $application_data_json = json_encode($applicationData);  
 
                 //ApplicationSubmission
-                $application_submission = new ApplicationSubmission;
                 $application_submission = $this->populateApplicationSubmission($session['userid'],$application_data_json);
-            $db = Yii::$app->db;
-            $transaction = $db->beginTransaction();
+                $db = Yii::$app->db;
+               $transaction = $db->beginTransaction();
 
                try{
                 //echo "<pre>";

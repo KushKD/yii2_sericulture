@@ -30,7 +30,7 @@
             <!--- header section begin --->
             <header>
                <!--- topbar section begin --->
-              <!--  <div class="top-bar">
+              <  <div class="top-bar">
                   <div class="col-md-3 col-sm-12 col-xs-12">
                      <div class="top-social">
                         <ul>
@@ -57,7 +57,7 @@
                         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                      </div>
                   </div>
-               </div> -->
+               </div> 
                <!-- Department Icons and Govt. Of India Icons -->
                <!--- top-logo section begin --->
                <div class="top-logo-section">
@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-md-8 col-sm-12 col-xs-12 zero">
                      <div class="logo-slogan">
-                        <h1><span>Sericulture Research & Development Council</span> </h1>
+                        <h1><span>Department of Sericulture, Himachal Pradesh</span> </h1>
                      </div>
                   </div>
                   <div class="col-md-2 col-sm-12 col-xs-12 zero">
