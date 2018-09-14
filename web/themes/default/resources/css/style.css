@@ -41,9 +41,7 @@ ReUsable Components
     margin: 0 auto;  /* For centering the ROW */
 }
 
-section{
-    /* padding: 80px 0; */
-}
+
 
 /* ========== HEADINGS =============================== */
 h1{
@@ -171,7 +169,7 @@ header {
      left: 0;
      width:250px;
      margin-top:  6px;
-     
+     z-index: 99;
      visibility: hidden;
      
 }
@@ -272,42 +270,47 @@ header {
 
   }
 
-  /* ul.menu li a {
+   .menu_ li{
+    list-style: none;
+    display: block;
+   
+}
+
+   .menu_ li a {
     float: left;
     font-size: 85%;
     padding: 4.6px 0;
     width: 100%;
     text-decoration: none;
-} */
+    color:#2a75bb;
+} 
 
-  ul.menu_ li a::before {
+    .menu_ li a::before {
     color: #2a75bb;
     content: "»";
     padding-right: 5px;
     text-decoration: none;
 }
 
-ul.menu_ li{
-    list-style: none;
-    display: block;
-   
-}
 
-ul.menu_ li a:link,
- .ul.menu_ li a:visited{
+
+.menu_ li a:link,
+ .menu_ li a:visited{
     float: left;
     font-size: 85%;
     padding: 4.6px 0;
     width: 100%;
     text-decoration: none;
-     color: #fff;
+     color: #2a75bb;
  }
 
- .ul.menu_ li a:hover,
- .ul.menu_ li a:active{
+ .menu_ li a:hover,
+ .menu_ li a:active{
     float: left;
     font-size: 85%;
     padding: 4.6px 0;
     width: 100%;
     text-decoration: none;
- } 
+    color: #e67e22;
+    background-color: #f2f2f6;
+ }   

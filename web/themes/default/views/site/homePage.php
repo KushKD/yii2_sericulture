@@ -22,16 +22,16 @@
 
 
 <!-- Maequee-->
-<!--  <section class="section_marquee" style="margin-top: -90px;">
+  <section class="section_marquee"  >
     <div class="row">
-            <marquee behavior="scroll" direction="left" style="background-color: #841f1f;"><span style="display: block; color: #FFF;"> Latest News </span></marquee>
+            <marquee behavior="scroll" direction="left" style="background-color: #FFF;"><span style="display: block; color: red;"> Latest News </span></marquee>
     </div>
-</section> -->
+</section> 
 <!-- Marquee -->
 
 
     <!-- Section Slider and Quick Links -->
-    <section class="slider_links_section">
+    <section class="slider_links_section"  >
         <div class="row">
             <div class="col span-1-of-2">
                 <!-- Place somewhere in the <body> of your page -->
@@ -72,17 +72,19 @@
             </div>
             <!-- Helpful Links Ends-->
             <div class="col span-1-of-4">
-                    <ul class="menu_"><li class="first leaf"><a href="#">Ease of doing business</a></li>
-                        <li class="leaf"><a href="#">Sustainable Development Goals </a></li>
-                        <li class="leaf"><a href="#">RTI</a></li>
-                        <li class="leaf"><a href="#">Tenders</a></li>
-                        <li class="leaf"><a href="#">Advertisement</a></li>
-                        <li class="leaf"><a href="#">Budget</a></li>
-                        <li class="leaf"><a href="#">Grievance Redressal</a></li>
-                        <li class="leaf"><a href="#">Media Gallery</a></li>
-                        <li class="leaf"><a href="#">Events</a></li>
-                        <li class="leaf"><a href="#">Citizen Charter</a></li>
-                        <li class="leaf"><a href="#">Important Links</a></li>
+                    <ul class="menu_">
+                 
+                        <li style="list-style: outside,none,none;"><a href="#">Ease of doing business</a></li>
+                        <li ><a href="#">Sustainable Development Goals </a></li>
+                        <li ><a href="#">RTI</a></li>
+                        <li ><a href="#">Tenders</a></li>
+                        <li ><a href="#">Advertisement</a></li>
+                        <li ><a href="#">Budget</a></li>
+                        <li ><a href="#">Grievance Redressal</a></li>
+                        <li ><a href="#">Media Gallery</a></li>
+                        <li ><a href="#">Events</a></li>
+                        <li ><a href="#">Citizen Charter</a></li>
+                        <li ><a href="#">Important Links</a></li>
                         <li class="last leaf"><a href="#">Feedback</a></li>
                         </ul>
             </div>
@@ -91,13 +93,5 @@
     </section>
     <!-- Section Slider and Quick Links-->
 
-    <!-- Maequee-->
- <section class="section_marquee" style="margin-top: -90px;">
-    <div class="row">
-            <marquee behavior="scroll" direction="left" style="background-color: #841f1f;"><span style="display: block; color: #FFF;"> Latest News </span></marquee>
-    </div>
-</section>
-
-<!-- Marquee -->
-
+  
    
