@@ -1,38 +1,9 @@
-  <div class="clearfix"></div>
-            
-            <!--- default section begin --->
-            <div class="section-default">
+  
                 
-                <!--- page title begin --->
-                <div class="page-title">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                    
-                        <h1>Himachal Pradesh</h1>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="bread-crumb text-right">
-                            <a href="http://sericulturecouncil.com">Home</a>&ensp;/&ensp;Operational area&ensp;/&ensp;Himachal Pradesh                        </div>
-                    </div>
-                </div>
-                <!--- page title end --->
-                
-                
-                <!--- page content begin --->
-                <div class="page-content">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-content">
-<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="page-buttons"><a class="btn btn-green-lg" href="srdc-silk-map">View Map</a></div>
-<!--- page buttons end ---></div>
+               
 
 
-
-<div class="row"><!--  row -->
-
-<div class="col-md-6 col-sm-6">
-<div align="center">
-<div class="page-images-opt">
-<img class="img-responsive" src="http://sericulturecouncil.com/newdesign/matrix_panel/upload/media/HPMapCompress_1473226473_0.jpg" alt="SRDC SILK MAP" usemap="#planetmap" />
+<!-- <img class="img-responsive" src="http://sericulturecouncil.com/newdesign/matrix_panel/upload/media/HPMapCompress_1473226473_0.jpg" alt="SRDC SILK MAP" usemap="#planetmap" />
  
  <map name="planetmap">
     <area shape="rect" coords="69,83,179,135" alt="Chamba" href="<?=Yii::$app->urlManager->createUrl("site/chamba?id=1")?>" />
@@ -47,62 +18,86 @@
     <area shape="rect" coords="168,425,226,460" alt="Solan" href="district-solan" />
     <area shape="rect" coords="292,397,364,434" alt="Shimla" href="district-shimla" />
     <area shape="rect" coords="242,498,330,541" alt="Sirmaur" href="district-sirmaur" />
-  </map>
-
-</div>
-</div>
-</div>
-
-<div class="col-md-4 col-sm-4">
-
-<div id="no-more-tables" class="page-table">
-                                    <table class="col-md-12 table-condensed table-hover"">
-                                        <thead class="thead-inverse">
-                                            <tr>
-                                                <th colspan="3" align="center">DISTRICT LIST</th>
-                                        </thead>
-                                        <tbody class="tbody-inverse">
-                                            <tr>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-bilaspur">Bilaspur</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="<?=Yii::$app->urlManager->createUrl("site/chamba?id=1")?>">Chamba</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-hamirpur">Hamirpur</a></td>
-                                            </tr>
-                                            
-                                            
-                                            <tr>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-kangra">Kangra</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-kinnaur">Kinnaur</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-kullu">Kullu</a></td>
-                                            </tr>
-                                            
-                                            
-                                            <tr>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-lahaul-spiti">Lahaul & Spiti</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-mandi">Mandi</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-shimla">Shimla</a></td>
-                                            </tr>
-                                            
-                                             <tr>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-solan">Solan</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-sirmaur">Sirmaur</a></td>
-                                                <td data-title="DISTRICT" class="cellLink"><a href="district-una">Una</a></td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-
-</div>
+  </map> -->
 
 
-<div class="col-md-2 col-sm-2">
-<p></p>
-<div align="center">
-<div class="page-images-opt"><img class="img-responsive" src="" alt="" usemap="#planetmap" />
-</div>
-</div>
+<!-- Maequee-->
+<!--  <section class="section_marquee" style="margin-top: -90px;">
+    <div class="row">
+            <marquee behavior="scroll" direction="left" style="background-color: #841f1f;"><span style="display: block; color: #FFF;"> Latest News </span></marquee>
+    </div>
+</section> -->
+<!-- Marquee -->
 
-</div>
 
+    <!-- Section Slider and Quick Links -->
+    <section class="slider_links_section">
+        <div class="row">
+            <div class="col span-1-of-2">
+                <!-- Place somewhere in the <body> of your page -->
+                <div class="flexslider" style="max-height: 300px;">
+                    <ul class="slides">
+                        <li>
+                            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/slider/slide1.png" />
+                            <p class="flex-caption">Test 1</p>
+                        </li>
+                        <li>
+                              
+                            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/slider/slide2.png" />
+                            <p class="flex-caption">Test 2</p>
+                        </li>
+                        <li>
+                               
+                            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/slider/slide3.png" />
+                            <p class="flex-caption">Test 3</p>
+                        </li>
 
-</div>
+                    </ul>
+                </div>
+            </div>
+            <!-- SLIDER ENDS -->
+
+            <!-- elpful Links-->
+            <div class="col span-1-of-4">
+                <div class="col span-4-of-4">
+                        <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/banner/plant_portlet.png" class=" col span1-of-4" alt="Food Plants of Silkworm">
+                        <a href="#" class="banner">Food Plants of Silkworm</a>
+                </div>
+
+                <div class="col span-4-of-4">
+                        <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/banner/Rearing_of_silkworm.jpg" class=" col span1-of-4" alt="Rearing of Silkworm">
+                        <a href="#" class="banner">Rearing of Silkworm</a>
+                </div>
+
+            </div>
+            <!-- Helpful Links Ends-->
+            <div class="col span-1-of-4">
+                    <ul class="menu_"><li class="first leaf"><a href="#">Ease of doing business</a></li>
+                        <li class="leaf"><a href="#">Sustainable Development Goals </a></li>
+                        <li class="leaf"><a href="#">RTI</a></li>
+                        <li class="leaf"><a href="#">Tenders</a></li>
+                        <li class="leaf"><a href="#">Advertisement</a></li>
+                        <li class="leaf"><a href="#">Budget</a></li>
+                        <li class="leaf"><a href="#">Grievance Redressal</a></li>
+                        <li class="leaf"><a href="#">Media Gallery</a></li>
+                        <li class="leaf"><a href="#">Events</a></li>
+                        <li class="leaf"><a href="#">Citizen Charter</a></li>
+                        <li class="leaf"><a href="#">Important Links</a></li>
+                        <li class="last leaf"><a href="#">Feedback</a></li>
+                        </ul>
+            </div>
+
+        </div>
+    </section>
+    <!-- Section Slider and Quick Links-->
+
+    <!-- Maequee-->
+ <section class="section_marquee" style="margin-top: -90px;">
+    <div class="row">
+            <marquee behavior="scroll" direction="left" style="background-color: #841f1f;"><span style="display: block; color: #FFF;"> Latest News </span></marquee>
+    </div>
+</section>
+
+<!-- Marquee -->
+
+   

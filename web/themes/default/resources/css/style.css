@@ -1,0 +1,313 @@
+/* 
+/*
+===================================================================================================
+Fluid Grid:- All layouts elemets are sized in Relitive Units like Percentage and not using Pixels
+Flexible Images:- Are also sized in reletive units
+Media Queries:- Allow us to Specify different CSS Style rules for different browser width
+===================================================================================================
+BASIC SET UP
+===================================================================================================
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #FFF;
+    color: #555;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;   /* Renders the Font in a perfect way */
+    font-weight: 250;
+}
+
+
+/*
+===================================================================================================
+===================================================================================================
+ReUsable Components
+===================================================================================================
+
+*/
+
+.row{
+    max-width: 1140px;
+    
+    /* margin: 0 auto 0 auto; */
+    margin: 0 auto;  /* For centering the ROW */
+}
+
+section{
+    /* padding: 80px 0; */
+}
+
+/* ========== HEADINGS =============================== */
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+
+}
+
+/* ========== BUTTONS =============================== */
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 10px, 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius:200px;
+    transition: background-color 2s , bordor 2s, color 2s;
+    
+}
+
+.btn-full:link,
+.btn-full:visited{
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color:#fff; 
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color:#e67e22; 
+}
+
+.btn:hover,
+.btn:active{
+     background-color: #7b3c04;
+}
+
+.btn-full:hover,
+.btn-full:active{
+   border: 1px solid #7b3c04;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #7b3c04;
+}
+
+
+/*
+===================================================================================================
+===================================================================================================
+Header Components
+===================================================================================================
+
+*/
+
+
+header {
+   /* background-image:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/hero.jpg);*/
+    background-size: cover;
+    background-position: center;
+   /* height: 100vh; */  /* 100 % of the View Port*/
+    }
+ 
+ .hero-text-box {
+     position: absolute;
+     width: 1140px;
+     top:50%;
+     left:50%;
+     transform: translate(-50%,-50%); 
+ }
+
+  .logo{
+     height:100px;
+     width:auto;
+     float:left;
+
+ } 
+
+ .minister{
+   
+    height: 80px;
+    width:75px;
+    border: 1px solid #e67e22;
+    background:#e67e22;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0;
+ }
+
+
+
+ .main-nav{
+     float: none;
+     list-style: none;
+      text-align: left;
+      display: inline;
+      background-color: #6699cc;
+      margin: 0;
+      padding: 0;
+ }
+
+ .main-nav li{
+     display: inline-block;
+     list-style: none;
+     height: auto;
+     position: relative;
+     padding: 5px 20px;
+     background: #2a75bb; 
+ }
+
+ .main-nav li ul{
+     display: none;  /* block*/
+     position: absolute;
+     background-color: #6699cc;
+     padding: 0;
+     left: 0;
+     width:250px;
+     margin-top:  6px;
+     
+     visibility: hidden;
+     
+}
+
+.main-nav li ul li {
+    display: block;
+    background: #2a75bb;
+    color:#e67e22;
+}
+
+
+
+.main-nav li ul li:hover {
+    /* background: #4dd0e1; */
+    border-bottom: 2px solid  #e67e22;
+    background-color: #f2f2f6;
+    color:#e67e22;
+    border-bottom: 2px solid #e67e22;
+    
+    }
+
+.main-nav  li:hover ul{
+  display: block;
+  opacity:1;
+  visibility: visible;
+}
+
+.dropdown_more ul li a{
+   
+    text-transform: none;
+    display: inline-block;
+        
+        }
+
+
+
+
+ .main-nav li a:link,
+ .main-nav li a:visited{
+    
+     color: #fff;
+     text-decoration: none;
+     font-size: 80%; 
+     border-bottom: 2px solid transparent;
+     transition: border-bottom 0.2s;
+     padding:5px 20px;
+ }
+
+ .main-nav li a:hover,
+ .main-nav li a:active{
+    border-bottom: 2px solid  #e67e22;
+    background-color: #f2f2f6;
+    color:#e67e22;
+    border-bottom: 2px solid #e67e22;
+ } 
+
+
+
+ .profile-discription{
+    letter-spacing: 0;
+    font-size: 9px;
+    line-height: 15px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #666;
+    text-align: center;
+ }
+
+
+
+ .flex-caption { 
+    background: #efefef; 
+    color: #e67e22;
+    position: relative;
+    text-align: center;
+    
+  }
+
+
+  .banner{
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-color: #efefef;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    color: #000;
+    display: inline-block;
+    vertical-align: bottom;
+    background: #fafafa;
+    font-size: 90%;
+    font-weight: 300;
+    height: 50px;
+    line-height: 22px;
+    padding: 5px;
+    width: 270px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -20px;
+
+  }
+
+  /* ul.menu li a {
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+} */
+
+  ul.menu_ li a::before {
+    color: #2a75bb;
+    content: "»";
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+ul.menu_ li{
+    list-style: none;
+    display: block;
+   
+}
+
+ul.menu_ li a:link,
+ .ul.menu_ li a:visited{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+     color: #fff;
+ }
+
+ .ul.menu_ li a:hover,
+ .ul.menu_ li a:active{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+ } 
