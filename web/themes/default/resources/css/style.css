@@ -22,7 +22,12 @@ html {
     font-family: 'Open Sans',sans-serif;
     font-size: 20px;
     text-rendering: optimizeLegibility;   /* Renders the Font in a perfect way */
-    font-weight: 250;
+    font-weight: 350;
+}
+
+body{
+    background-image: url(../img/pattren1.jpg);    
+    background-repeat: repeat;
 }
 
 
@@ -54,6 +59,13 @@ h1{
     letter-spacing: 1px;
     word-spacing: 4px;
 
+}
+
+h3{
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 /* ========== BUTTONS =============================== */
@@ -270,6 +282,28 @@ header {
 
   }
 
+  .banner2{
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-color: #efefef;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    color: #000;
+    display: inline-block;
+    vertical-align: bottom;
+    background: #fafafa;
+    font-size: 90%;
+    font-weight: 300;
+    height: 40px;
+    line-height: 22px;
+    padding: 5px;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -3px;
+
+  }
+
    .menu_ li{
     list-style: none;
     display: block;
@@ -313,4 +347,170 @@ header {
     text-decoration: none;
     color: #e67e22;
     background-color: #f2f2f6;
+ }   
+
+
+ .about_border {
+    display: block;
+    width: 500px;
+    height: 3px;
+    background: #e67e22;
+    margin-top: -5px;
+}
+
+.about_border_2{
+    display: block;
+    width: 220px;
+    height: 3px;
+    background: #e67e22;
+    margin-top: -5px;
+}
+
+.about_border_Line{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #e67e22;
+    margin-top: -5px;
+}
+
+
+
+.block_contents {
+    list-style: none;
+    display: block;
+}
+
+.block_contents a::before {
+    color: #2a75bb;
+    content: "⇢";
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+
+
+.block_contents li a:link,
+ .block_contents li a:visited{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+     color: #2a75bb;
+ }
+
+ .block_contents li a:hover,
+ .block_contents li a:active{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #e67e22;
+    background-color: #f2f2f6;
+ }   
+
+
+
+
+ .footer-accessing-as {
+    background: #2a75bb;
+    height: 35px;
+}
+
+.footer-wrapper {
+    min-height: 300px;
+    background-color: #1f5385;
+    background-image: url(../img/foot-back.jpg);    
+    background-repeat: repeat;
+    width: 100%;
+}
+
+
+.footer-wrapper .region-footer-menu-two, .footer-wrapper .region-footer-menu-three {
+    background-image: url(/sites/all/themes/swf/images/footer-divider.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    min-height: 250px;
+}
+
+.footer_list{
+
+    list-style: none;
+    display: block;
+    margin-top: -20px;
+}
+
+.footer_list a::before {
+    color: #FFF;
+    content: "⇢";
+    padding-right: 10px;
+    text-decoration: none;
+    padding-left: 30px;
+
+}
+
+
+.footer_list li a:link,
+.footer_list li a:visited{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+     color: #FFF;
+ }
+
+ .footer_list li a:hover,
+ .footer_list li a:active{
+    float: left;
+    font-size: 85%;
+    padding: 4.6px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #e67e22;
+ }  
+ 
+ 
+
+ .footer-bottom-wrapper {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.footer-bottom-wrapper-list{
+    list-style: none;
+    display: inline;
+    align-items: center;
+}
+
+.footer-bottom-wrapper-list li {
+    
+    display: inline-block;
+    border-right: 1px solid #999;
+    display: inline;
+    padding-left: 20px; 
+    padding-right: 20px; 
+
+    
+} 
+
+.footer-bottom-wrapper-list li a:link,
+ .footer-bottom-wrapper-list li a:visited{
+   
+    font-size: 85%;
+    width: 100%;
+    text-decoration: none;
+     color: #2a75bb;
+ }
+
+ .footer-bottom-wrapper-list li a:hover,
+ .footer-bottom-wrapper-list li a:active{
+   
+    font-size: 85%;
+    width: 100%;
+    text-decoration: none;
+    color: #e67e22;
  }   

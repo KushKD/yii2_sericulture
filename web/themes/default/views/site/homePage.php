@@ -93,5 +93,140 @@
     </section>
     <!-- Section Slider and Quick Links-->
 
+    <!-- Want to Know More -->
+     <section class="slider_links_section"  >
+        <div class="row">
+            <div class="col span-1-of-2">
+                <!-- Place somewhere in the <body> of your page -->
+               <h2>Do you want to know more about: </h2>
+               <div class="about_border">&nbsp;</div>
+
+<!-- List One Starts -->
+               <div class="content_list">
+                   <div class="col span-1-of-2" >
+                
+                   <ul class="block_contents">         
+                 <li >  
+                        <div >        
+                            <span ><a href="#" title="Silk and its uses">Silk and its uses</a></span>  
+                        </div>
+                    </li>
+                <li class="views-row views-row-2 views-row-even">  
+                    <div >        
+                        <span ><a href="#" title="Role of Women in Sericulture Industry">Role of Women in Sericulture.</a></span>  
+                    </div></li>
+                <li class="views-row views-row-3 views-row-odd views-row-last">  
+                    <div >        
+                        <span ><a href="#" title="Land Record of Seed Farms,Plantation Centres,etc.">Land Record of Seed Farms..</a></span>  
+                    </div>
+                </li>
+</ul>
+<!-- List One Ends -->
+                </div>
+
+
+
+                   <div class="col span-1-of-2" >
+                
+                <!-- List Two Starts -->
+                <ul class="block_contents">          
+                    <li >  
+                     <div >       
+                          <span ><a href="#" title="Raising of Host plant and Silkworm Seed Production">Raising of Host plant and..</a></span> 
+                         </div>
+                        </li>
+             <li class="views-row views-row-2 views-row-even views-row-last">  
+                 <div >       
+                      <span >
+                          <a href="#" title="Seri-Polyclinic">Seri-Polyclinic</a></span> 
+                         </div>
+                        </li>
+         </ul>
+                <!-- List Two Ends -->
+                
+                </div>
+                </div>
+</div>    
+            
+            <!-- SLIDER ENDS -->
+
+            <!-- elpful Links-->
+            <div class="col span-1-of-4">
+                <!-- Place somewhere in the <body> of your page -->
+                <h2>How do I ? </h2>
+               <div class="about_border_2">&nbsp;</div>
+               <div class="col span-2-of-2" >
+                
+                <!-- List Two Starts -->
+                <ul class="block_contents">          
+                    <li >  
+                     <div >       
+                          <span ><a href="#" title="Raising of Host plant and Silkworm Seed Production">Know about Silk and its Products</a></span> 
+                         </div>
+                        </li>
+            
+         </ul>
+                <!-- List Two Ends -->
+                
+                </div>
+
+            </div>
+            <!-- Helpful Links Ends-->
+            <div class="col span-1-of-4">
+            <h2>Latest</h2>
+               <div class="about_border_2">&nbsp;</div>
+               <div class="col span-2-of-2" >
+                
+                <!-- List Two Starts -->
+                <ul class="block_contents">          
+                    <li >  
+                     <div >       
+                          <span ><a href="#" title="Raising of Host plant and Silkworm Seed Production">Latest Updates</a></span> 
+                         </div>
+                        </li>
+            
+         </ul>
+                <!-- List Two Ends -->
+                
+                </div>
+                   
+            </div>
+
+        </div>
+    </section>
+    <div class="about_border_Line">&nbsp;</div>
+    <!-- WANT TO KNOW MORE-->
+
+
+    <!-- Sericulture News, Awards etc -->
+   <!-- Sericulture News, Awards etc -->
+<section>
+   <div class="row">
+       <div class="col span-12-of-12" style="padding-right:20px;">
+   <div class="col span-1-of-4">
+            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/disease_silkworm.jpg" class=" col span1-of-4" alt="Food Plants of Silkworm">
+            <a href="#" class="banner2">Diseases of Silkworm</a>
+         </div>
+         <div class="col span-1-of-4">
+            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/silkworm_technology.jpg" class=" col span1-of-4" alt="Rearing of Silkworm">
+            <a href="#" class="banner2">Silkworm Seed Technology</a>
+         </div>
+         <div class="col span-1-of-4">
+            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/silk_rearing_and_spinning.jpg" class=" col span1-of-4" alt="Rearing of Silkworm">
+            <a href="#" class="banner2">Silk Reeling and Spinning</a>
+         </div>
+         <div class="col span-1-of-4">
+            <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/img/awards.jpg" class=" col span1-of-4" alt="Rearing of Silkworm">
+            <a href="#" class="banner2">Sericulture Training, Exhibition and Awards</a>
+         </div>
+</div>
+   </div>
+</section>
+<!-- Sericulture News, Awards etc -->
+      <!-- Sericulture News, Awards etc -->
+
+
+    
+
   
    

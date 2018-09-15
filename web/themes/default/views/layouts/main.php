@@ -139,9 +139,89 @@
          <?= $content ?> 
       </div>
      
-      <!--- footer  --->
+      <!--- footer Starts --->
+      <div class="row"> 
+          <div class=" footer-accessing-as">
+              &nbsp;
+                        </div>
+     </div>
+
+<div class="row">
+    <div class="footer-wrapper">
+                         
+    <div class="col span-1-of-3">
+    <h3 style="margin-top:0; padding-top:20px; padding-bottom:10px; padding-left:30px; color:#FFF;">Information &amp; Services</h3>
+    <ul class="footer_list">
+        <li><a title="Muga " href="#">Muga </a></li>
+        <li><a title="Eri " href="#">Eri </a></li>
+        <li><a title="Mulberry " href="#">Mulberry </a></li>
+        <li><a title="Tasar" href="#">Tasar</a></li>
+        <li><a title="Cocoon " href="#">Cocoon </a></li>
+        <li><a title="Sericulture Technological  Center" href="#">Sericulture Technological  Center</a></li>
+        <li><a title="Research and Development" href="#">Research and Development</a></li>
+    </ul>  
+    </div>
+
+     <div class="col span-1-of-3">
+    <h3 style="margin-top:0; padding-top:20px; padding-bottom:10px; padding-left:30px; color:#FFF;">Policies</h3>
+    <ul class="footer_list">
+        <li><a title="Copyright Policy " href="#">Copyright Policy </a></li>
+        <li><a title="Hyperlinking Policy " href="#">Hyperlinking Policy </a></li>
+        <li><a title="Privacy Policy " href="#">Privacy Policy </a></li>
+        <li><a title="Accessibility Statement" href="#">Accessibility Statement</a></li>
+        <li><a title="Screen Reader " href="#">Screen Reader </a></li>
+        <li><a title="Content Management" href="#">Content Management</a></li>
+    </ul>  
+    </div>
+
+    
+
+
+
+
+
+
+
+     <div class="col span-1-of-3">
+    <h3 style="margin-top:0; padding-top:20px; padding-bottom:10px; padding-left:30px; color:#FFF;">About the Government</h3>
+    <ul class="footer_list">
+        <li><a title=" " href="#">Government Link 1</a></li>
+        <li><a title=" " href="#"> Government Link 2 </a></li>
+        <li><a title=" " href="#"> Government Link 3 </a></li>
+        <li><a title="" href="#">Government Link 4</a></li>
+        <li><a title=" " href="#">Government Link 5 </a></li>
+        <li><a title="" href="#">Government Link 6</a></li>
+        <li><a title="" href="#">Government Link 7</a></li>
+    </ul>  
+    </div>
+
+
+
+
+    </div>
+
+<div class="row">
+    <div class="footer-bottom-wrapper">
+    <ul class="footer-bottom-wrapper-list">
+        <li><a title="Copyright Policy " href="#">Disclaimer </a></li>
+        <li><a title="Hyperlinking Policy " href="#">Hyperlinking Policy </a></li>
+        <li><a title="Privacy Policy " href="#">Privacy Policy </a></li>
+        <li><a title="Accessibility Statement" href="#">Accessibility Statement</a></li>
+        <li><a title="Screen Reader " href="#">Screen Reader </a></li>
+        <li><a title="Content Management" href="#">Content Management</a></li>
+    </ul>  
+    </div>
+</div>
+
+
+
+                        </div>
+      <!-- Footer Ends -->
       
       <?php $this->endBody() ?>
    </body>
 </html>
 <?php $this->endPage() ?>
+
+
+
